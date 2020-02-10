@@ -1,5 +1,5 @@
 
-public class monopolyArrays
+public class monopolyArrays 
 	{
 		public static void chanceCards()
 		{
@@ -8,6 +8,8 @@ public class monopolyArrays
 		
 		public static void streets()
 		{
+			Properties[] streets = new Properties[22];
+			streets[0].setName("Avenue");
 			
 		}
 		public static void treasureCards()
