@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Properties extends BuyableProperties
 	{
@@ -5,16 +6,42 @@ public class Properties extends BuyableProperties
 		protected boolean hotel;
 		protected String color;
 		protected boolean canPlaceHouses;
+		protected int houseCost;
+		protected ArrayList<Integer> housesAndHotels;
 		
-	public Properties(String n, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH)
+		
+		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost>
+	public Properties(String n, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC, ArrayList<Integer> hAH)
 		{
 			super(n, p, b, cWLO);
 			housesBought = hB;
 			hotel = h;
 			color = c;
 			canPlaceHouses = cPH;
+			houseCost = hC;
+			housesAndHotels = hAH;
 		}
 		
+		public ArrayList<Integer> getHousesAndHotels()
+		{
+			return housesAndHotels;
+		}
+
+	public void setHousesAndHotels(ArrayList<Integer> housesAndHotels)
+		{
+			this.housesAndHotels = housesAndHotels;
+		}
+
+		public int getHouseCost()
+		{
+			return houseCost;
+		}
+
+	public void setHouseCost(int houseCost)
+		{
+			this.houseCost = houseCost;
+		}
+
 		public int getHousesBought()
 		{
 			return housesBought;
