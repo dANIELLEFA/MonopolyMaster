@@ -1,5 +1,5 @@
 
-public class Properties extends Board
+public class Properties extends BuyableProperties
 	{
 		protected int price;
 		protected int rent;
@@ -12,12 +12,9 @@ public class Properties extends Board
 		
 	public Properties(String n, int p, int r, int hB, boolean h, boolean s, String c, boolean cPH)
 		{
-			super(n);
-			price = p;
-			rent = r;
+			super(n, hB, cPH, hB);
 			housesBought = hB;
 			hotel = h;
-			sold = s;
 			color = c;
 			canPlaceHouses = cPH;
 		}
