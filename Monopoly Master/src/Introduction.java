@@ -7,7 +7,7 @@ public class Introduction
 		
 		public static void greetPlayers()
 		{ 
-			System.out.println("Hello, welcome to Monopoly, would you like the instructions? \n(1) Yes \n(2) No"); 
+			System.out.println("Hello, welcome to Monopoly, would you like the instructions? \n(1) Yes \n(2) No");    
 			int wantInstructions = userIntInput.nextInt();
 			
 			boolean wrongNumber = true; 
