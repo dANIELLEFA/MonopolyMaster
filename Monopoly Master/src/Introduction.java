@@ -47,9 +47,12 @@ public class Introduction
 			}
 
 		public static void giveInstructions()
-			{
-				System.out.println("Here are the instructions: ");
 
-			}
+		{ 
+			System.out.println("Here are the instructions: ");
+			//System.out.println("(1) You will start the game with $1500");
+			
+		}
+
 
 	}

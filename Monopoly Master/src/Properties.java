@@ -9,19 +9,20 @@ public class Properties extends BuyableProperties
 		protected int houseCost;
 		protected ArrayList<Integer> housesAndHotels;
 
-		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel,
-		// <Color>, CanPlaceHouses, <houseCost>
-		public Properties(String n, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC,
-				ArrayList<Integer> hAH)
-			{
-				super(n, p, b, cWLO);
-				housesBought = hB;
-				hotel = h;
-				color = c;
-				canPlaceHouses = cPH;
-				houseCost = hC;
-				housesAndHotels = hAH;
-			}
+		
+		
+		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
+	public Properties(String n, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC, ArrayList<Integer> hAH)
+		{
+			super(n, p, b, cWLO);
+			housesBought = hB;
+			hotel = h;
+			color = c;
+			canPlaceHouses = cPH;
+			houseCost = hC;
+			housesAndHotels = hAH;
+		}
+		
 
 		public ArrayList<Integer> getHousesAndHotels()
 			{
