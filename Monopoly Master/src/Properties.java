@@ -10,7 +10,7 @@ public class Properties extends BuyableProperties
 		protected ArrayList<Integer> housesAndHotels;
 		
 		
-		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost>
+		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
 	public Properties(String n, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC, ArrayList<Integer> hAH)
 		{
 			super(n, p, b, cWLO);
