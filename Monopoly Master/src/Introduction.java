@@ -35,7 +35,7 @@ public class Introduction
 			
 			System.out.println("Player 1, what is your name?"); 
 			String playerOneName = userStringInput.nextLine(); 
-			System.out.println("Great! hello "  + playerOneName + ", you are player 1.");
+			System.out.println("Great! hello "  + playerOneName + ".");
 			
 			Player playerOne = new Player(playerOneName, 1500, 0, null); 
 			
@@ -47,7 +47,7 @@ public class Introduction
 			
 			System.out.println("Player 2, what is your name?");
 			String playerTwoName = userStringInput.nextLine(); 
-			System.out.println("Great! hello " + playerTwoName);
+			System.out.println("Great! hello " + playerTwoName + ".");
 			Player playerTwo = new Player(playerTwoName, 1500, 0, null); 
 
 		}
