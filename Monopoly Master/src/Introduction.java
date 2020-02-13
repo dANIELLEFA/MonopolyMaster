@@ -36,13 +36,7 @@ public class Introduction
 			System.out.println("Player 1, what is your name?"); 
 			String playerOneName = userStringInput.nextLine(); 
 			System.out.println("Great! hello "  + playerOneName + ".");
-			
 			Player playerOne = new Player(playerOneName, 1500, 0, null); 
-			
-			
-			
-			
-			
 			
 			
 			System.out.println("Player 2, what is your name?");
@@ -55,8 +49,8 @@ public class Introduction
 		public static void giveInstructions()
 		{ 
 			System.out.println("Here are the instructions: ");
-			//System.out.println("(1) You will start the game with $1500");
 			
+			//System.out.println("Instructions....");
 		}
 		
 
