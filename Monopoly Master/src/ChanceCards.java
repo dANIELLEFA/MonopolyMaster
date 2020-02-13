@@ -1,33 +1,35 @@
 import java.util.ArrayList;
+
 public class ChanceCards extends NotBuyable
 	{
-		protected ArrayList <String> cards;
+		protected ArrayList<String> cards;
 		protected boolean alreadyPicked;
-	public ChanceCards(String n, boolean oS, ArrayList c, boolean aP)
-		{
-			super(n, oS);
-			cards = c;
-			alreadyPicked = aP;
-		}
 
-	public ArrayList<String> getCards()
-		{
-			return cards;
-		}
+		public ChanceCards(String n, boolean oS, ArrayList c, boolean aP)
+			{
+				super(n, oS);
+				cards = c;
+				alreadyPicked = aP;
+			}
 
-	public void setCards(ArrayList<String> cards)
-		{
-			this.cards = cards;
-		}
+		public ArrayList<String> getCards()
+			{
+				return cards;
+			}
 
-	public boolean isAlreadyPicked()
-		{
-			return alreadyPicked;
-		}
+		public void setCards(ArrayList<String> cards)
+			{
+				this.cards = cards;
+			}
 
-	public void setAlreadyPicked(boolean alreadyPicked)
-		{
-			this.alreadyPicked = alreadyPicked;
-		}
+		public boolean isAlreadyPicked()
+			{
+				return alreadyPicked;
+			}
+
+		public void setAlreadyPicked(boolean alreadyPicked)
+			{
+				this.alreadyPicked = alreadyPicked;
+			}
 
 	}

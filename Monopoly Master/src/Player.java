@@ -1,28 +1,24 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 public class Player
 	{
-		private String name; 
-		private int totalMoney; 
+		private String name;
+		private int totalMoney;
 		private int placeOnBoard;
-		private ArrayList<Properties> playerProperties = new ArrayList<Properties>(); 
-		
-		public Player(String n, int t, int p, ArrayList pR)
-		{ 
-			name = n; 
-			totalMoney = t; 
-			placeOnBoard = p; 
-			playerProperties = pR; 
-		}
+		private ArrayList<Properties> playerProperties = new ArrayList<Properties>();
 
-		
-		
+		public Player(String n, int t, int p, ArrayList pR)
+			{
+				name = n;
+				totalMoney = t;
+				placeOnBoard = p;
+				playerProperties = pR;
+			}
+
 		public String getName()
 			{
 				return name;
 			}
-
-
 
 		public void setName(String name)
 			{
@@ -58,10 +54,5 @@ public class Player
 			{
 				this.playerProperties = playerProperties;
 			}
-		
-
-		
-		
-		
 
 	}

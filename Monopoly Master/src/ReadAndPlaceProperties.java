@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class ReadAndPlaceProperties
 	{
 		public static void readColorProperties() throws FileNotFoundException
-		{
-			Scanner file = new Scanner(new File("listOfProperties.txt"));
-			
-		}
+			{
+				Scanner file = new Scanner(new File("listOfProperties.txt"));
+
+			}
 	}
