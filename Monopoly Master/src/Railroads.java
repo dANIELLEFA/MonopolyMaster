@@ -3,9 +3,9 @@ public class Railroads extends BuyableProperties
 	{
 		protected int numberOwned;
 
-		public Railroads(String n, int p, boolean b, int cWLO, int nO)
+		public Railroads(String n, int pOB, int p, boolean b, int cWLO, int nO)
 			{
-				super(n, p, b, cWLO);
+				super(n, pOB, p, b, cWLO);
 				numberOwned = nO;
 			}
 

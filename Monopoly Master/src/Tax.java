@@ -3,9 +3,9 @@ public class Tax extends NotBuyable
 	{
 		protected int amountOfTax;
 
-		public Tax(String n, boolean oS, int aOT)
+		public Tax(String n, int pOB, boolean oS, int aOT)
 			{
-				super(n, oS);
+				super(n, pOB, oS);
 				amountOfTax = aOT;
 			}
 
