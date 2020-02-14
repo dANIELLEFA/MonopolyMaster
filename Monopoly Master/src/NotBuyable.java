@@ -3,9 +3,9 @@ public abstract class NotBuyable extends Board
 	{
 		protected boolean onSpace;
 
-		public NotBuyable(String n, boolean oS)
+		public NotBuyable(String n, int pOB, boolean oS)
 			{
-				super(n);
+				super(n, pOB);
 				onSpace = oS;
 			}
 
