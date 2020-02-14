@@ -11,7 +11,7 @@ public class Introduction
 				int wantInstructions = userIntInput.nextInt();
 
 				boolean wrongNumber = true;
-
+       
 				while (wrongNumber)
 					{
 						if (wantInstructions == 1)
@@ -37,12 +37,12 @@ public class Introduction
 				String playerOneName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
 
-				Player playerOne = new Player(playerOneName, 1500, 0, null);
+				Player playerOne = new Player(playerOneName, 1500, 0, null, false);
 
 				System.out.println("Player 2, what is your name?");
 				String playerTwoName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerTwoName);
-				Player playerTwo = new Player(playerTwoName, 1500, 0, null);
+				Player playerTwo = new Player(playerTwoName, 1500, 0, null, false);
 
 			}
 

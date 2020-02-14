@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class MonopolyRunner
+public class MonopolyRunner    
 	{
 
 		static ArrayList<Board> board = new ArrayList<Board>();
