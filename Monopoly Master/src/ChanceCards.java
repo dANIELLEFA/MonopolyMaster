@@ -5,22 +5,22 @@ public class ChanceCards extends NotBuyable
 		protected ArrayList<String> cards;
 		protected boolean alreadyPicked;
 
-		public ChanceCards(String n, int pOB, boolean oS, ArrayList c, boolean aP)
+		public ChanceCards(String n, int pOB, boolean oS, boolean aP)
 			{
 				super(n, pOB, oS);
-				cards = c;
+				//cards = c;
 				alreadyPicked = aP;
 			}
 
-		public ArrayList<String> getCards()
-			{
-				return cards;
-			}
-
-		public void setCards(ArrayList<String> cards)
-			{
-				this.cards = cards;
-			}
+//		public ArrayList<String> getCards()
+//			{
+//				return cards;
+//			}
+//
+//		public void setCards(ArrayList<String> cards)
+//			{
+//				this.cards = cards;
+//			}
 
 		public boolean isAlreadyPicked()
 			{
