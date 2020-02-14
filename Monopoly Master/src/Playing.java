@@ -6,7 +6,7 @@ public class Playing
 		{
 			while(playing)
 				{
-				//	System.out.println("You are at  " +Board.board.);
+				//	System.out.println("You are at  " +Board.board.y);
 				}
 		}
 	}
