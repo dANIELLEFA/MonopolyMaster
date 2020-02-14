@@ -6,13 +6,26 @@ public class Player
 		private int totalMoney;
 		private int placeOnBoard;
 		private ArrayList<Properties> playerProperties = new ArrayList<Properties>();
+		private boolean getOutOfJail; 
 
-		public Player(String n, int t, int p, ArrayList pR)
+		public Player(String n, int t, int p, ArrayList pR, boolean g)
 			{
 				name = n;
 				totalMoney = t;
 				placeOnBoard = p;
 				playerProperties = pR;
+				getOutOfJail = g; 
+				
+			}
+
+		public boolean isGetOutOfJail()
+			{
+				return getOutOfJail;
+			}
+
+		public void setGetOutOfJail(boolean getOutOfJail)
+			{
+				this.getOutOfJail = getOutOfJail;
 			}
 
 		public String getName()
