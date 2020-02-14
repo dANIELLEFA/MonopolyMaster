@@ -25,9 +25,10 @@ public class ReadAndPlaceProperties
 				int costWhenLandedOn = Integer.parseInt(information[2]);
 				String color = information[3];
 				int houseCost = Integer.parseInt(information[4]);
+				int placeOnBoard = Integer.parseInt(information[5]);
 				ArrayList<Integer> housesAndHotelCosts = getHouseAndHotels(houseForProperty);
 				
-				MonopolyRunner.board.add(new Properties(name, price, false, costWhenLandedOn, 0, false, color, false, houseCost, housesAndHotelCosts));
+				MonopolyRunner.board.add(new Properties(name, placeOnBoard, price, false, costWhenLandedOn, 0, false, color, false, houseCost, housesAndHotelCosts));
 			}
 		}
 		
