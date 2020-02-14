@@ -3,9 +3,9 @@ public class FreeParking extends NotBuyable
 	{
 		protected boolean reverse;
 
-		public FreeParking(String n, boolean oS, boolean r)
+		public FreeParking(String n, int pOB, boolean oS, boolean r)
 			{
-				super(n, oS);
+				super(n, pOB, oS);
 				reverse = r;
 
 			}

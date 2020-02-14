@@ -5,9 +5,9 @@ public class ChanceCards extends NotBuyable
 		protected ArrayList<String> cards;
 		protected boolean alreadyPicked;
 
-		public ChanceCards(String n, boolean oS, ArrayList c, boolean aP)
+		public ChanceCards(String n, int pOB, boolean oS, ArrayList c, boolean aP)
 			{
-				super(n, oS);
+				super(n, pOB, oS);
 				cards = c;
 				alreadyPicked = aP;
 			}

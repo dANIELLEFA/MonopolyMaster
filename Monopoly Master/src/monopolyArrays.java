@@ -35,9 +35,7 @@ public class monopolyArrays
 				// streets[0].setRent(10);
 				// streets[0].setPrice(70);
 				// streets[0].setColor("Pink");
-				// streets[0].setName("States Avenue");
-				// streets[0].setRent(10);
-				// streets[0].setPrice(70);
+				
 
 			}
 
