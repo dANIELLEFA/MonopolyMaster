@@ -50,6 +50,6 @@ public class monopolyArrays
 			{
 
 			}
-		// orange12
+		// orange1
 	}
 

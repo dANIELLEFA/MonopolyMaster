@@ -6,7 +6,7 @@ public class Introduction
 		static Scanner userIntInput = new Scanner(System.in);
 
 		public static void greetPlayers()
-			{
+    {
 				System.out.println("Hello, welcome to Monopoly, would you like the instructions? \n(1) Yes \n(2) No");
 				int wantInstructions = userIntInput.nextInt();
 
@@ -46,12 +46,13 @@ public class Introduction
 
 			}
 
+
 		public static void giveInstructions()
 
 		{ 
 			System.out.println("Here are the instructions: ");
-			//System.out.println("(1) You will start the game with $1500");
 			
+			//System.out.println("Instructions....");
 		}
 
 
