@@ -4,7 +4,8 @@ public class Introduction
 	{
 		static Scanner userStringInput = new Scanner(System.in);
 		static Scanner userIntInput = new Scanner(System.in);
-
+		static Player playerOne;
+		static Player playerTwo;
 		public static void greetPlayers()
     {
 				System.out.println("Hello, welcome to Monopoly, would you like the instructions? \n(1) Yes \n(2) No");
@@ -37,12 +38,12 @@ public class Introduction
 				String playerOneName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
 
-				Player playerOne = new Player(playerOneName, 1500, 0, null, false);
+				 playerOne = new Player(playerOneName, 1500, 0, null, false);
 
 				System.out.println("Player 2, what is your name?");
 				String playerTwoName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerTwoName);
-				Player playerTwo = new Player(playerTwoName, 1500, 0, null, false);
+				 playerTwo = new Player(playerTwoName, 1500, 0, null, false);
 
 			}
 
