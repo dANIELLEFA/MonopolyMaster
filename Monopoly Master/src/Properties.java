@@ -12,9 +12,9 @@ public class Properties extends BuyableProperties
 		
 		
 		// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
-	public Properties(String n, int pOB, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC, ArrayList<Integer> hAH)
+	public Properties(String n, String t, int pOB, int p, boolean b, int cWLO, int hB, boolean h, String c, boolean cPH, int hC, ArrayList<Integer> hAH)
 		{
-			super(n, pOB, p, b, cWLO);
+			super(n, t, pOB, p, b, cWLO);
 			housesBought = hB;
 			hotel = h;
 			color = c;
