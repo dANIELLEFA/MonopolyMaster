@@ -13,10 +13,11 @@ public class CommunityChestReader
 					String information = file.nextLine();
 					String[] toAssess = information.split("[%]");
 					
-					for(String s: toAssess)
-						System.out.print(s + " : ");
+					String whatCardSays = toAssess[0];
+					String operator = toAssess[1];
+					int valueToChange = Integer.parseInt(toAssess[2]);
 					
-					System.out.println();
+					MonopolyRunner.board.add(new )
 				}
 		}
 	}

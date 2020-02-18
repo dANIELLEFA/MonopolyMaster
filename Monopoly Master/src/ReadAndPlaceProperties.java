@@ -11,7 +11,9 @@ public class ReadAndPlaceProperties
 		{
 			Scanner file = new Scanner(new File("listOfProperties.txt"));
 			
-			// <name>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
+			//Scanner file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
+			
+			// <name>, <place on board>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
 			
 			while (file.hasNext())
 			{
