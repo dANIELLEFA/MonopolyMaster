@@ -1,44 +1,44 @@
-Mediterranean Avenue+60+2+Brown+50+1+Property
+Badlands+60+2+Brown+50+1+Property
 10 30 90 160 250
-Baltic Avenue+60+4+Brown+50+3+Property
+Wind Cave+60+4+Brown+50+3+Property
 20 60 180 320 450
-Oriental Avenue+100+6+Light Blue+50+6+Property
+Death Valley+100+6+Light Blue+50+6+Property
 30 90 270 400 550
-Vermont Avenue+100+6+Light Blue+50+8+Property
+Bryce Canyon+100+6+Light Blue+50+8+Property
 30 90 270 400 550
-Connecticut Avenue+120+8+Light Blue+50+9+Property
+Sequoia+120+8+Light Blue+50+9+Property
 40 100 300 450 600
-St. Charles Place+140+10+Pink+100+11+Property
+Hawaii Volcanoes+140+10+Pink+100+11+Property
 50 150 450 625
-States Avenue+140+10+Pink+100+13+Property
+Everglades+140+10+Pink+100+13+Property
 50 150 450 625 750
-Virginia Avenue+160+12+Pink+100+14+Property
+Shenandoah+160+12+Pink+100+14+Property
 60 180 550 700 900
-St. James Place+180+14+Orange+100+16+Property
+Mt. Rainier+180+14+Orange+100+16+Property
 70 200 550 750 950
-Tennessee Avenue+180+14+Orange+100+18+Property
+Joshua Tree+180+14+Orange+100+18+Property
 70 200 550 750 950
-New York Avenue+200+16+Orange+100+19+Property
+Glacier+200+16+Orange+100+19+Property
 80 220 600 800 1000
-Kentucky Avenue+220+18+Red+150+21+Property
+Mammoth Cave+220+18+Red+150+21+Property
 90 250 700 875 1050
-Indiana Avenue+220+18+Red+150+23+Property
+Grand Teton+220+18+Red+150+23+Property
 90 250 700 875 1050
-Illinois Avenue+300+20+Red+150+24+Property
+Acadia+300+20+Red+150+24+Property
 100 300 750 925 1100
-Atlantic Avenue+260+22+Yellow+150+26+Property
+Zion+260+22+Yellow+150+26+Property
 110 330 800 975 1150
-Ventor Avenue+260+22+Yellow+150+27+Property
+Cuyahoga Valley+260+22+Yellow+150+27+Property
 110 330 800 975 1150
-Marvin Gardens+280+24+Yellow+150+29+Property
+Yellowstone+280+24+Yellow+150+29+Property
 120 360 850 1025 1200
-Pacific Avenue+300+26+Green+200+31+Property
+Rocky Mountains+300+26+Green+200+31+Property
 130 390 900 1100 1275
-North Carolina Avenue+300+26+Green+200+32+Property
+Olympic+300+26+Green+200+32+Property
 130 390 900 1100 1275
-Pennsylvania Avenue+320+28+Green+200+34+Property
+Yosemite+320+28+Green+200+34+Property
 150 450 1000 1200 1400
-Park Place+350+35+Blue+200+37+Property
+Grand Canyon+350+35+Blue+200+37+Property
 175 500 1100 1300 1500
-Boardwalk+400+50+Blue+200+39+Property
+Great Smoky Mountains+400+50+Blue+200+39+Property
 200 600 1400 1700 2000
