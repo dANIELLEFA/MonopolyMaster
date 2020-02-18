@@ -53,7 +53,8 @@ public class OptionsWhenYouLand
 		
 		public static void passGo()
 		{ 
-			
+			int previousMoney = MonopolyRunner.players.get(0).getTotalMoney();
+			MonopolyRunner.players.get(0).setTotalMoney(previousMoney+ 200);
 		}
 		
 		public static void landOnUtility()
