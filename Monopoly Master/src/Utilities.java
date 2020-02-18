@@ -3,9 +3,9 @@ public class Utilities extends BuyableProperties
 	{
 		protected boolean both;
 
-		public Utilities(String n, int pOB, int p, boolean b, int cWLO, boolean bo)
+		public Utilities(String n, String t, int pOB, int p, boolean b, int cWLO, boolean bo)
 			{
-				super(n, pOB, p, b, cWLO);
+				super(n, t, pOB, p, b, cWLO);
 				both = bo;
 			}
 
