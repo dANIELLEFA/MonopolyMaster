@@ -9,9 +9,9 @@ public class ReadAndPlaceProperties
 
 
 		{
-			Scanner file = new Scanner(new File("listOfProperties.txt"));
+			//Scanner file = new Scanner(new File("listOfProperties.txt"));
 			
-			//Scanner file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
+			Scanner file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
 			
 			// <name>, <place on board>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
 			
