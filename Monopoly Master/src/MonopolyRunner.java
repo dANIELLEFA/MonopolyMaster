@@ -5,6 +5,7 @@ public class MonopolyRunner
 	{
 
 		static ArrayList<Board> board = new ArrayList<Board>();
+		static ArrayList<Player> players = new ArrayList<Player>();
 		
 		public static void main(String[] args) throws FileNotFoundException
 			{
