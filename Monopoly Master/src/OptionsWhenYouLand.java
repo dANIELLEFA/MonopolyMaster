@@ -24,7 +24,8 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+						//if owned pay what ever
+			//if not option to buy
 		}
 				
 		public static void landOnTax()
