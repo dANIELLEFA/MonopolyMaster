@@ -17,7 +17,7 @@ public class CommunityChestReader
 					String operator = toAssess[1];
 					int valueToChange = Integer.parseInt(toAssess[2]);
 					
-					MonopolyRunner.board.add(new )
+				
 				}
 		}
 	}
