@@ -10,7 +10,7 @@ public class Playing
 					Dice.rollDice();
 					Introduction.playerOne.setPlaceOnBoard(Introduction.playerOne.getPlaceOnBoard() + Dice.diceTotal);;
 					System.out.println(Introduction.playerOne.getName()+ ", you rolled a total of " +Dice.diceTotal +". You landed on " + MonopolyRunner.board.get(Introduction.playerOne.getPlaceOnBoard())+".");
-					
+					OptionsWhenYouLand.landOnPlace();
 					System.out.println("Hello "+Introduction.playerTwo.getName()+" are at  " + MonopolyRunner.board.get(Introduction.playerTwo.getPlaceOnBoard()) +".");
 					Dice.rollDice();
 					Introduction.playerTwo.setPlaceOnBoard(Introduction.playerTwo.getPlaceOnBoard() + Dice.diceTotal);;
