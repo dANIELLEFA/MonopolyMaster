@@ -10,7 +10,7 @@ public class MonopolyRunner
 			{
 				//Introduction.greetPlayers();
 				ReadAndPlaceProperties.readColorProperties();
-				CommunityChestReader.readCommunityChest();
+				//CommunityChestReader.readCommunityChest();
 				
 				for(Board b: board)
 					{
