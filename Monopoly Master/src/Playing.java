@@ -1,21 +1,27 @@
 
 public class Playing
 	{
-		
+
+		static int player =1;
+
 		static boolean playing;
 		public static void play()
 		{
 			while(playing)
 				{
-					System.out.println("Hello "+Introduction.playerOne.getName()+" are at  " + MonopolyRunner.board.get(Introduction.playerOne.getPlaceOnBoard()) +".");
+					player--;
+					System.out.println("Hello "+MonopolyRunner.players.get(player).getName()+" are at  " + MonopolyRunner.board.get(MonopolyRunner.players.get(player).getPlaceOnBoard()) +".");
 					Dice.rollDice();
-					Introduction.playerOne.setPlaceOnBoard(Introduction.playerOne.getPlaceOnBoard() + Dice.diceTotal);;
-					System.out.println(Introduction.playerOne.getName()+ ", you rolled a total of " +Dice.diceTotal +". You landed on " + MonopolyRunner.board.get(Introduction.playerOne.getPlaceOnBoard())+".");
-					
-					System.out.println("Hello "+Introduction.playerTwo.getName()+" are at  " + MonopolyRunner.board.get(Introduction.playerTwo.getPlaceOnBoard()) +".");
+
+					MonopolyRunner.players.get(player).setPlaceOnBoard(MonopolyRunner.players.get(player).getPlaceOnBoard() + Dice.diceTotal);;
+					System.out.println(MonopolyRunner.players.get(player).getName()+ ", you rolled a total of " +Dice.diceTotal +". You landed on " + MonopolyRunner.board.get(MonopolyRunner.players.get(player).getPlaceOnBoard())+".");
+					OptionsWhenYouLand.landOnPlace();
+					player++;
+					System.out.println("Hello "+MonopolyRunner.players.get(player).getName()+" are at  " + MonopolyRunner.board.get(MonopolyRunner.players.get(player).getPlaceOnBoard()) +".");
+
 					Dice.rollDice();
-					Introduction.playerTwo.setPlaceOnBoard(Introduction.playerTwo.getPlaceOnBoard() + Dice.diceTotal);;
-					System.out.println(Introduction.playerTwo.getName()+ ", you rolled a total of " +Dice.diceTotal +". You landed on " + MonopolyRunner.board.get(Introduction.playerTwo.getPlaceOnBoard())+".");
+					MonopolyRunner.players.get(player).setPlaceOnBoard(MonopolyRunner.players.get(player).getPlaceOnBoard() + Dice.diceTotal);;
+					System.out.println(MonopolyRunner.players.get(player).getName()+ ", you rolled a total of " +Dice.diceTotal +". You landed on " + MonopolyRunner.board.get(MonopolyRunner.players.get(player).getPlaceOnBoard())+".");
 				}
 		}
 //		public static void landOnProperty()
