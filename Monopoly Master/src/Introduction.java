@@ -28,9 +28,17 @@ public class Introduction
 						else
 							{
 								System.out.println("Please pick 1 or 2");
-								wrongNumber = true;
 							}
 					}
+				
+				System.out.println("What theme would you like to use? \n(1) Standard \n(2) National Parks");
+				
+				int choosingTheme = userIntInput.nextInt();
+				
+				if (choosingTheme == 1)
+					MonopolyRunner.changeThemes = 0;
+				else if (choosingTheme == 2)
+					MonopolyRunner.changeThemes = 1;
 
 				System.out.println("Player 1, what is your name?");
 				String playerOneName = userStringInput.nextLine();
