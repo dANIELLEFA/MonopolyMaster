@@ -4,7 +4,7 @@
 public class OptionsWhenYouLand
 	{
 		
-		
+		//static railroad
 		
 		
 		public static void landOnPlace()
@@ -30,7 +30,10 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+//						if(MonopolyRunner.board.get(MonopolyRunner.players.get(Playing.player).getPlaceOnBoard()).)
+//							{
+//								
+//							} 
 		}
 				
 		public static void landOnTax()
