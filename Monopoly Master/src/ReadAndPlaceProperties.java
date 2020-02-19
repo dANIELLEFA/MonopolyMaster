@@ -5,13 +5,16 @@ import java.util.Scanner;
 
 public class ReadAndPlaceProperties
 	{
+		
 		public static void readColorProperties() throws FileNotFoundException
 
 
 		{
-			Scanner file = new Scanner(new File("listOfProperties.txt"));
-			
-			//Scanner file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
+			Scanner file = null;
+			if (MonopolyRunner.changeThemes == 0)
+				file = new Scanner(new File("listOfProperties.txt"));
+			else if (MonopolyRunner.changeThemes == 1)
+				file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
 			
 			// <name>, <place on board>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
 			
