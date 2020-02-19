@@ -15,6 +15,9 @@ public class MakeOtherPieces
 		}
 		public static void makeRailroads()
 		{
-			
+			MonopolyRunner.board.add(new Railroads("Narrow Gauge Railroad", "Railroad", 5, 200, false, 0, 0));
+			MonopolyRunner.board.add(new Railroads("The Chesapeake and Ohio Railroad", "Railroad", 15, 200, false, 0, 0));
+			MonopolyRunner.board.add(new Railroads("The Nashville and Chattanooga Railroad", "Railroad", 25, 200, false, 0, 0));
+			MonopolyRunner.board.add(new Railroads("The Scenic Railroad", "Railroad", 35, 200, false, 0, 0));
 		}
 	}
