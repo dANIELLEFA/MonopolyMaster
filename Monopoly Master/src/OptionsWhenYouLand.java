@@ -8,11 +8,14 @@ public class OptionsWhenYouLand
 		
 		public static void landOnPlace()
 		{ 
-		
-			//if()
+			int place = MonopolyRunner.players.get(0).getPlaceOnBoard();
+			
+			if(MonopolyRunner.board.get(place).getType().equals("Property"))
 				{
-					
+					landOnProperty(); 
 				}
+			
+			
 		}
 		
 		
@@ -21,7 +24,7 @@ public class OptionsWhenYouLand
 		public static void landOnProperty()
 		{ 
 			//if owned by other person - pay rent 
-			//if(MonopolyRunner.players.get())
+			
 			
 			//if owned by you (buy house) 
 			//if not owned - option to buy property 
