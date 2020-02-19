@@ -1,5 +1,6 @@
 
 
+
 public class OptionsWhenYouLand
 	{
 		
@@ -21,13 +22,14 @@ public class OptionsWhenYouLand
 		public static void landOnProperty()
 		{ 
 			//if owned by other person - pay rent 
+			
 			//if owned by you (buy house) 
 			//if not owned - option to buy property 
 		}
 				
 	    public static void landOnRailroad()
 		{ 
-			//	if()		
+						
 		}
 				
 		public static void landOnTax()
@@ -74,5 +76,6 @@ public class OptionsWhenYouLand
 
 
 	}
+
 
 

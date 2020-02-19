@@ -35,7 +35,6 @@ public class Introduction
 				System.out.println("Player 1, what is your name?");
 				String playerOneName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
-
 				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, null, false));
 
 				System.out.println("Player 2, what is your name?");
