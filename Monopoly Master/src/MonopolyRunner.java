@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MonopolyRunner    
 	{
@@ -12,6 +13,11 @@ public class MonopolyRunner
 				//Introduction.greetPlayers();
 				ReadAndPlaceProperties.readColorProperties();
 				//CommunityChestReader.readCommunityChest();
+				MakeOtherPieces.makeChanceCards();
+				MakeOtherPieces.makeCommunityChest();
+				MakeOtherPieces.makeRailroads();
+				
+				Collections.sort(board, new BoardSorter());
 				
 				for(Board b: board)
 					{
