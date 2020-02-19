@@ -27,7 +27,7 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+			//	if()		
 		}
 				
 		public static void landOnTax()
