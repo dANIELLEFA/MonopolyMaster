@@ -1,10 +1,9 @@
-
 public class Playing
 	{
 		
 		
-
-		static int player =1;
+		// which player is it
+		static int player = 1;
 
 		static boolean playing;
 		public static void play()
@@ -28,7 +27,7 @@ public class Playing
 		}
 //		public static void landOnProperty()
 //		{
-//		t	
+//			
 //		}
 //		public static void landOnTax()
 //		{
