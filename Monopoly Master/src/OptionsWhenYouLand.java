@@ -3,17 +3,59 @@
 
 public class OptionsWhenYouLand
 	{
+		//test
 		
-		//static railroad
-		
+		static int place = MonopolyRunner.players.get(0).getPlaceOnBoard();
 		
 		public static void landOnPlace()
 		{ 
-		
-			//if()
+			
+			
+			if(MonopolyRunner.board.get(place).getType().equals("Property"))
 				{
-					
+					landOnProperty();  
 				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("Railroad"))
+				{
+					landOnRailroad(); 
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("Tax"))
+				{
+					landOnTax(); 
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("FreeParking"))
+				{
+					landOnFreeParking(); 
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("CommunityChest"))
+				{ 
+					landOnCommunityChest(); 
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("Chance"))
+				{ 
+					landOnChance(); 
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("GoToJail"))
+				{ 
+					landOnGoToJail(); 				
+				}
+			
+			else if(MonopolyRunner.board.get(place).getType().equals("PassGo"))
+				{ 
+					passGo(); 
+				}
+					
+			else if(MonopolyRunner.board.get(place).getType().equals("Utility"))
+				{ 
+					landOnUtility(); 
+				}
+		
 		}
 		
 		
@@ -22,7 +64,11 @@ public class OptionsWhenYouLand
 		public static void landOnProperty()
 		{ 
 			//if owned by other person - pay rent 
-			//if(MonopolyRunner.players.get())
+//			if(MonopolyRunner.board.get(place)
+//				{ 
+//					
+//				}
+			
 			
 			//if owned by you (buy house) 
 			//if not owned - option to buy property 
@@ -30,10 +76,7 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-//						if(MonopolyRunner.board.get(MonopolyRunner.players.get(Playing.player).getPlaceOnBoard()).)
-//							{
-//								
-//							} 
+						
 		}
 				
 		public static void landOnTax()
@@ -80,6 +123,10 @@ public class OptionsWhenYouLand
 
 
 	}
+
+
+
+
 
 
 
