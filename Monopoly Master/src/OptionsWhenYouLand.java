@@ -89,7 +89,27 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
+				{
+					
+					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+					((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
+					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+				}
+			else
+				{
+					System.out.println("Would you like to buy property?");
+					String buy = userStringInput.nextLine(); 
+					buy.toLowerCase();
+					if(buy.equals("yes"))
+						{
+							//((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties((Railroads) MonopolyRunner.board.get(place)));
+						}
+					else
+						{
+						//	System.out.println("");
+						}
+				}
 		}
 				
 		public static void landOnTax()
