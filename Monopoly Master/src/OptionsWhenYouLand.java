@@ -101,9 +101,10 @@ public class OptionsWhenYouLand
 					System.out.println("Would you like to buy property?");
 					String buy = userStringInput.nextLine(); 
 					buy.toLowerCase();
+					
 					if(buy.equals("yes"))
 						{
-							//((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties((Railroads) MonopolyRunner.board.get(place)));
+							((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties(buy, buy, place, place, false, place, place, false, buy, false, place, null));
 						}
 					else
 						{
