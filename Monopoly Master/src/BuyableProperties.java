@@ -13,4 +13,34 @@ public abstract class BuyableProperties extends Board
 				costWhenLandedOn = cWLO;
 			}
 
+		public int getPrice()
+			{
+				return price;
+			}
+
+		public void setPrice(int price)
+			{
+				this.price = price;
+			}
+
+		public boolean isBought()
+			{
+				return bought;
+			}
+
+		public void setBought(boolean bought)
+			{
+				this.bought = bought;
+			}
+
+		public int getCostWhenLandedOn()
+			{
+				return costWhenLandedOn;
+			}
+
+		public void setCostWhenLandedOn(int costWhenLandedOn)
+			{
+				this.costWhenLandedOn = costWhenLandedOn;
+			}
+
 	}
