@@ -29,7 +29,7 @@ public class Playing
 		}
 //		public static void landOnProperty()
 //		{
-//			
+//		t	
 //		}
 //		public static void landOnTax()
 //		{
