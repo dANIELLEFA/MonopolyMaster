@@ -1,9 +1,10 @@
 
+import java.util.Scanner; 
 
 
 public class OptionsWhenYouLand
 	{
-		//test
+		static Scanner userStringInput = new Scanner(System.in);
 		
 		static int place = MonopolyRunner.players.get(0).getPlaceOnBoard();
 		
@@ -64,7 +65,26 @@ public class OptionsWhenYouLand
 		public static void landOnProperty()
 		{ 
 			//if owned by other person - pay rent 
-//			if(MonopolyRunner.board.get(place)
+		
+			
+			String propertyName = MonopolyRunner.board.get(place).getName();  
+			String propertyColor = ((Properties) MonopolyRunner.board.get(place)).getColor();
+			System.out.println("You landed on " + propertyName + " property. The color of this property is " + propertyColor);
+			
+			if(((Properties) MonopolyRunner.board.get(place)).isBought())
+				{
+					
+				}
+			
+			else 
+				{ 
+					System.out.println("Would you like to buy this property?");
+					String chooseToBuy = userStringInput.next(); 
+					
+					
+				}
+//			
+//			if(MonopolyRunner.board.get(place).)
 //				{ 
 //					
 //				}
@@ -76,7 +96,7 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-					//int railroadOwned = ((Player)MonopolyRunner.players.get(Playing.player)).getPlayerProperties().size();	
+						
 		}
 				
 		public static void landOnTax()
@@ -123,6 +143,7 @@ public class OptionsWhenYouLand
 
 
 	}
+
 
 
 
