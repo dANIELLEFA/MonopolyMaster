@@ -76,7 +76,7 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+					//int railroadOwned = ((Player)MonopolyRunner.players.get(Playing.player)).getPlayerProperties().size();	
 		}
 				
 		public static void landOnTax()
