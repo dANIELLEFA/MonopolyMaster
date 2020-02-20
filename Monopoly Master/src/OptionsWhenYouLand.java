@@ -73,7 +73,8 @@ public class OptionsWhenYouLand
 			
 			if(((Properties) MonopolyRunner.board.get(place)).isBought())
 				{
-					
+					int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+					System.out.println("This property is already owned. ");
 				}
 			
 			else 
@@ -83,15 +84,7 @@ public class OptionsWhenYouLand
 					
 					
 				}
-//			
-//			if(MonopolyRunner.board.get(place).)
-//				{ 
-//					
-//				}
-			
-			
-			//if owned by you (buy house) 
-			//if not owned - option to buy property 
+
 		}
 				
 	    public static void landOnRailroad()
