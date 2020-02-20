@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner; 
 
 
@@ -63,7 +64,7 @@ public class OptionsWhenYouLand
 		
 		
 		public static void landOnProperty()
-		{ 
+			{ 
 			//if owned by other person - pay rent 
 		
 			
@@ -116,7 +117,28 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-						
+			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
+				{
+					
+					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+					((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
+					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+				}
+			else
+				{
+					System.out.println("Would you like to buy property?");
+					String buy = userStringInput.nextLine(); 
+					buy.toLowerCase();
+					
+					if(buy.equals("yes"))
+						{
+							((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties(buy, buy, place, place, false, place, place, false, buy, false, place, null));
+						}
+					else
+						{
+						//	System.out.println("");
+						}
+				}
 		}
 				
 		public static void landOnTax()
