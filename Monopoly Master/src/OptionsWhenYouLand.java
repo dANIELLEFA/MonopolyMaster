@@ -2,7 +2,7 @@
 
 public class OptionsWhenYouLand
 	{
-		
+		//test
 		
 		static int place = MonopolyRunner.players.get(0).getPlaceOnBoard();
 		
