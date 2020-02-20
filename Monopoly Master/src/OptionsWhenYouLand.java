@@ -72,15 +72,42 @@ public class OptionsWhenYouLand
 			System.out.println("You landed on " + propertyName + " property. The color of this property is " + propertyColor);
 			
 			if(((Properties) MonopolyRunner.board.get(place)).isBought())
+				{ 
+					
+				}
+			
+			else if(((Properties) MonopolyRunner.board.get(place)).isBought())
 				{
 					int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-					System.out.println("This property is already owned. ");
+					//fix index 
+					String playerOneName = MonopolyRunner.players.get(0).getName(); 
+					String playerTwoName = MonopolyRunner.players.get(1).getName(); 
+					System.out.println("This property is already owned. You owe the owner $" + amountToPay);
+					//fix for current player
+					int currentMoneyPlayerOne = MonopolyRunner.players.get(0).getTotalMoney(); 
+					int currentMoneyPlayerTwo = MonopolyRunner.players.get(0).getTotalMoney(); 
+					MonopolyRunner.players.get(0).setTotalMoney(currentMoneyPlayerOne - amountToPay); 
+					MonopolyRunner.players.get(0).setTotalMoney(currentMoneyPlayerTwo + amountToPay);
+					System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
+					System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
+					
 				}
 			
 			else 
 				{ 
-					System.out.println("Would you like to buy this property?");
+					System.out.println("Would you like to buy this property?/n(1) Yes/n(2) No");
 					String chooseToBuy = userStringInput.next(); 
+					
+					if(chooseToBuy.equals("1") || chooseToBuy.toUpperCase().equals("YES"))
+						{
+							
+						}
+					
+					if(chooseToBuy.equals("2") || chooseToBuy.toUpperCase().equals("NO"))
+						{
+							
+						}
+					
 					
 					
 				}
