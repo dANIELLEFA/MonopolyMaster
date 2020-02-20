@@ -5,10 +5,10 @@ public class Player
 		private String name;
 		private int totalMoney;
 		private int placeOnBoard;
-		private ArrayList<Properties> playerProperties = new ArrayList<Properties>();
+		private ArrayList<BuyableProperties> playerProperties;// = new ArrayList<BuyableProperties>();
 		private boolean getOutOfJail; 
 
-		public Player(String n, int t, int p, ArrayList pR, boolean g)
+		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g)
 			{
 				name = n;
 				totalMoney = t;
@@ -58,14 +58,15 @@ public class Player
 				this.placeOnBoard = placeOnBoard;
 			}
 
-		public ArrayList<Properties> getPlayerProperties()
+		public ArrayList<BuyableProperties> getPlayerProperties()
 			{
 				return playerProperties;
 			}
 
-		public void setPlayerProperties(ArrayList<Properties> playerProperties)
+		public void setPlayerProperties(ArrayList<BuyableProperties> playerProperties)
 			{
 				this.playerProperties = playerProperties;
 			}
+
 
 	}
