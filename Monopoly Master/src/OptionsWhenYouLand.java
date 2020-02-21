@@ -121,6 +121,19 @@ public class OptionsWhenYouLand
 			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
 				{
 					
+
+					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+					((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()-amountToPay);
+					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
+				}
+			else
+				{
+					System.out.println("Would you like to buy property?");
+					String buy = userStringInput.nextLine(); 
+					buy.toLowerCase();
+					
+				
+
 					if(MonopolyRunner.players.get(Playing.player).getPlayerProperties().contains(railroadName))
 						{
 							System.out.println("Thank goodness you own this Railroad.");
