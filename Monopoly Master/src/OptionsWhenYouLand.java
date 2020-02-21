@@ -132,7 +132,7 @@ public class OptionsWhenYouLand
 					
 					if(buy.equals("yes"))
 						{
-							((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties(buy, buy, place, place, false, place, place, false, buy, false, place, null));
+							//((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties(buy, buy, place, place, false, place, place, false, buy, false, place, null));
 						}
 					else
 						{
