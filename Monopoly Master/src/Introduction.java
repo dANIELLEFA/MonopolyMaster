@@ -22,7 +22,7 @@ public class Introduction
 						else if (wantInstructions == 2)
 							{
 								wrongNumber = false;
-								System.out.println("Great, it's time to play some monopoy.");
+								System.out.println("Great, it's time to play some Monopoly.");
 							}
 
 						else
