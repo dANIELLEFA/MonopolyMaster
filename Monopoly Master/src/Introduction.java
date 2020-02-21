@@ -56,7 +56,8 @@ public class Introduction
 		public static void giveInstructions()
 
 		{ 
-			System.out.println("Here are the instructions: ");
+			System.out.println("This is a work in progress...");
+			System.exit(0);
 			
 			//System.out.println("Instructions....");
 		}

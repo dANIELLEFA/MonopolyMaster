@@ -121,8 +121,8 @@ public class OptionsWhenYouLand
 				{
 					
 					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-					((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
-					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+					((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()-amountToPay);
+					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
 				}
 			else
 				{
