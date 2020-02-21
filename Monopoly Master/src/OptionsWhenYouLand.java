@@ -72,11 +72,18 @@ public class OptionsWhenYouLand
 			String propertyColor = ((Properties) MonopolyRunner.board.get(place)).getColor();
 			System.out.println("You landed on " + propertyName + " property. The color of this property is " + propertyColor);
 			
-			if(((Properties) MonopolyRunner.board.get(place)).isBought())
-				{ 
-					
-				}
 			
+			//check to see if you own it
+			if(MonopolyRunner.players.get(0).getPlayerProperties().contains(propertyName))
+					{
+							
+					}
+//			if(((Properties) MonopolyRunner.board.get(place)).isBought())
+//				{ 
+//					
+//				}
+			
+			//if owned by other player 
 			else if(((Properties) MonopolyRunner.board.get(place)).isBought())
 				{
 					int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
@@ -108,9 +115,7 @@ public class OptionsWhenYouLand
 						{
 							
 						}
-					
-					
-					
+	
 				}
 
 		}
