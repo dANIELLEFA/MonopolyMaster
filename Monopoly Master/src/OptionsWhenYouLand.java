@@ -122,39 +122,27 @@ public class OptionsWhenYouLand
 				{
 					
 
-					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-					((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()-amountToPay);
-					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
-				}
-			else
-				{
-					System.out.println("Would you like to buy property?");
-					String buy = userStringInput.nextLine(); 
-					buy.toLowerCase();
-					
-				
-
-					if(MonopolyRunner.players.get(Playing.player).getPlayerProperties().contains(railroadName))
+					if(MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().contains(railroadName))
 						{
-							System.out.println("Thank goodness you own this Railroad.");
+							System.out.println("Thankfully you own this railroad.");
 							Playing.play();
 						}
 					else
 						{// takes away current player money
-							// adds to other player
+							// adds to other player ok
 							int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-							((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
-							((Player) MonopolyRunner.players.get(Playing.player+1)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player+1)).getTotalMoney()+amountToPay);
-							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+							((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()-amountToPay);
+							((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney()+amountToPay);
+							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
 							Playing.play();
 						}
-					
 				}
 			else
 				{
+					BuyThings.buyPlaces();
 					
-						BuyThings.buyPlaces();
 				}
+
 		}
 				
 		public static void landOnTax()
