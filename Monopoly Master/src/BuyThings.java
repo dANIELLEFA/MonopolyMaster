@@ -22,7 +22,45 @@ public class BuyThings
 								if (proofAnswer.equals("YES"))
 									{
 										MonopolyRunner.players.get(0).getPlayerProperties().add(property);
-										((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(false);
+										((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+									}
+								
+							}
+
+					}
+				else if (MonopolyRunner.board.get(OptionsWhenYouLand.place).getType().equals("Railroad"))
+					{
+						String railroadName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
+						System.out.println("You landed on " + railroadName + ".");
+						if (!BuyableProperties.isBought())
+							{
+								System.out.println("Would you like to buy this railroad? (\"Yes or no\")");
+								String answer = userStringInput.nextLine();
+								String proofAnswer = answer.toUpperCase();
+								Railroads railroad = ((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								if (proofAnswer.equals("YES"))
+									{
+										MonopolyRunner.players.get(0).getPlayerProperties().add(railroad);
+										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+									}
+								
+							}
+
+					}
+				else if (MonopolyRunner.board.get(OptionsWhenYouLand.place).getType().equals("Utility"))
+					{
+						String utilityName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
+						System.out.println("You landed on " + utilityName + ".");
+						if (!BuyableProperties.isBought())
+							{
+								System.out.println("Would you like to buy this utility? (\"Yes or no\")");
+								String answer = userStringInput.nextLine();
+								String proofAnswer = answer.toUpperCase();
+								Utilities utility = ((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								if (proofAnswer.equals("YES"))
+									{
+										MonopolyRunner.players.get(0).getPlayerProperties().add(utility);
+										((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 								
 							}
