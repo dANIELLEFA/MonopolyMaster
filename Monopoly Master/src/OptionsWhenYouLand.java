@@ -117,27 +117,31 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
+			String railroadName =((Railroads) MonopolyRunner.board.get(place)).name;
+		
 			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
 				{
 					
-					int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-					((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
-					System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+					if(MonopolyRunner.players.get(Playing.player).getPlayerProperties().contains(railroadName))
+						{
+							System.out.println("Thank goodness you own this Railroad.");
+							Playing.play();
+						}
+					else
+						{// takes away current player money
+							// adds to other player
+							int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+							((Player) MonopolyRunner.players.get(Playing.player)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()-amountToPay);
+							((Player) MonopolyRunner.players.get(Playing.player+1)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.player+1)).getTotalMoney()+amountToPay);
+							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.player)).getTotalMoney()+"." );
+							Playing.play();
+						}
+					
 				}
 			else
 				{
-					System.out.println("Would you like to buy property?");
-					String buy = userStringInput.nextLine(); 
-					buy.toLowerCase();
 					
-					if(buy.equals("yes"))
-						{
-							//((Player) MonopolyRunner.players.get(Playing.player)).getPlayerProperties().add(new Properties(buy, buy, place, place, false, place, place, false, buy, false, place, null));
-						}
-					else
-						{
-						//	System.out.println("");
-						}
+						BuyThings.buyPlaces();
 				}
 		}
 				
