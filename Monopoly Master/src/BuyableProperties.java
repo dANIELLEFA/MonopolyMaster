@@ -2,7 +2,7 @@
 public abstract class BuyableProperties extends Board
 	{
 		protected int price;
-		protected boolean bought;
+		protected static boolean bought;
 		protected int costWhenLandedOn;
 
 		public BuyableProperties(String n, String t, int pOB, int p, boolean b, int cWLO)
@@ -23,7 +23,7 @@ public abstract class BuyableProperties extends Board
 				this.price = price;
 			}
 
-		public boolean isBought()
+		public static boolean isBought()
 			{
 				return bought;
 			}
