@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner; 
 
 
@@ -7,7 +6,7 @@ public class OptionsWhenYouLand
 	{
 		static Scanner userStringInput = new Scanner(System.in);
 		
-		static int place = MonopolyRunner.players.get(0).getPlaceOnBoard();
+		static int place = MonopolyRunner.players.get(Playing.currentPlayer).getPlaceOnBoard();
 		
 		public static void landOnPlace()
 		{ 
@@ -43,7 +42,7 @@ public class OptionsWhenYouLand
 					landOnChance(); 
 				}
 			
-			else if(MonopolyRunner.board.get(place).getType().equals("GoToJail"))
+			else if(MonopolyRunner.board.get(place).getName().equals("Go to Jail"))
 				{ 
 					landOnGoToJail(); 				
 				}
@@ -57,6 +56,11 @@ public class OptionsWhenYouLand
 				{ 
 					landOnUtility(); 
 				}
+			
+			else if(MonopolyRunner.board.get(place).getName().equals("Jail"))
+				{
+					justVisitingJail(); 
+				}
 		
 		}
 		
@@ -65,42 +69,31 @@ public class OptionsWhenYouLand
 		
 		public static void landOnProperty()
 			{ 
-			//if owned by other person - pay rent 
-		
-			
+				
 			String propertyName = MonopolyRunner.board.get(place).getName();  
 			String propertyColor = ((Properties) MonopolyRunner.board.get(place)).getColor();
 			System.out.println("You landed on " + propertyName + " property. The color of this property is " + propertyColor);
-			
-			
-			//check to see if you own it
-		
-//			if(((Properties) MonopolyRunner.board.get(place)).isBought())
-//				{ 
-//					
-//				}
-			
-			//if owned by other player 
+
 			if(((Properties) MonopolyRunner.board.get(place)).isBought())
 				{
-					if(MonopolyRunner.players.get(0).getPlayerProperties().contains(propertyName))
+					
+					//check if current player owns it 
+					if(MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().contains(propertyName))
 						{
 							System.out.println("You currently own ");
-							
 						}
 					
-					else if(MonopolyRunner.players.get(1).getPlayerProperties().contains(propertyName))
+					//check if not current player owns it 
+					else if(MonopolyRunner.players.get(Playing.notCurrentPlayer).getPlayerProperties().contains(propertyName))
 						{
 							int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-							//fix index 
-							String playerOneName = MonopolyRunner.players.get(0).getName(); 
-							String playerTwoName = MonopolyRunner.players.get(1).getName(); 
-							System.out.println("This property is already owned. You owe the owner $" + amountToPay);
-							//fix for current player
-							int currentMoneyPlayerOne = MonopolyRunner.players.get(0).getTotalMoney(); 
-							int currentMoneyPlayerTwo = MonopolyRunner.players.get(0).getTotalMoney(); 
-							MonopolyRunner.players.get(0).setTotalMoney(currentMoneyPlayerOne - amountToPay); 
-							MonopolyRunner.players.get(0).setTotalMoney(currentMoneyPlayerTwo + amountToPay);
+							String playerOneName = MonopolyRunner.players.get(Playing.currentPlayer).getName(); 
+							String playerTwoName = MonopolyRunner.players.get(Playing.notCurrentPlayer).getName(); 
+							System.out.println("This property is already owned. " + playerOneName + ", you owe the owner $" + amountToPay);
+							int currentMoneyPlayerOne = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
+							int currentMoneyPlayerTwo = MonopolyRunner.players.get(Playing.notCurrentPlayer).getTotalMoney(); 
+							MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(currentMoneyPlayerOne - amountToPay); 
+							MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(currentMoneyPlayerTwo + amountToPay);
 							System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
 							System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
 						}
@@ -167,6 +160,7 @@ public class OptionsWhenYouLand
 		
 		public static void landOnGoToJail()
 		{
+			System.out.println("You landed on GO TO JAIL, now moving you to jail...");
 			
 		}
 		
@@ -180,6 +174,11 @@ public class OptionsWhenYouLand
 		{ 
 			
 			
+			
+		}
+		
+		public static void justVisitingJail()
+		{ 
 			
 		}
 		
