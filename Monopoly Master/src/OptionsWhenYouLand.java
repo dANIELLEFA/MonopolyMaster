@@ -76,7 +76,7 @@ public class OptionsWhenYouLand
 
 			System.out.println("The Color Of this property is " + propertyColor + ".");
 			
-			if(((Properties) MonopolyRunner.board.get(place)).isBought())
+			if(((BuyableProperties) MonopolyRunner.board.get(place)).isBought())
 				{
 					
 					//check if current player owns it 
@@ -194,7 +194,7 @@ public class OptionsWhenYouLand
 		public static void landOnUtility()
 		{ 
 			
-			BuyThings.buyPlaces(); 
+			BuyThings.buyPlaces();  
 			
 		}
 		
