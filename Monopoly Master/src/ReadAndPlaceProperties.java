@@ -16,7 +16,7 @@ public class ReadAndPlaceProperties
 			else if (MonopolyRunner.changeThemes == 1)
 				file = new Scanner(new File ("listOfPropertiesNationalParks.txt"));
 			
-			// <name>, <place on board>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
+			// <name>, <type of space>, <place on board>, <price>, bought, <costWhenLandedOn>, housesBought, isHotel, <Color>, CanPlaceHouses, <houseCost> <Houses and Hotels>
 			
 			while (file.hasNext())
 			{

@@ -46,7 +46,7 @@ public class BuyThings
 										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 								
-System.out.println("TEST!!!: ---> ");
+								System.out.println("TEST!!!: ---> ");
 								
 								for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
 								{
@@ -71,7 +71,7 @@ System.out.println("TEST!!!: ---> ");
 										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myUtilityToAdd);
 										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
-System.out.println("TEST!!!: ---> ");
+								System.out.println("TEST!!!: ---> ");
 								
 								for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
 								{

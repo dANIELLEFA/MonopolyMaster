@@ -120,7 +120,7 @@ public class OptionsWhenYouLand
 				
 	    public static void landOnRailroad()
 		{ 
-			String railroadName =((Railroads) MonopolyRunner.board.get(place)).name;
+			String railroadName = ((Railroads) MonopolyRunner.board.get(place)).getName();
 		
 			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
 				{
@@ -132,15 +132,17 @@ public class OptionsWhenYouLand
 							Playing.play();
 						}
 					else
-						{// takes away current player money
+						{
+							// takes away current player money
 							// adds to other player ok
 							int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-							((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()-amountToPay);
-							((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney()+amountToPay);
-							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $"+amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
+							((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney() - amountToPay);
+							((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney() + amountToPay);
+							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $" + amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
 							Playing.play();
 						}
 				}
+			
 			else
 				{
 					BuyThings.buyPlaces();
@@ -158,7 +160,7 @@ public class OptionsWhenYouLand
 		
 		public static void landOnFreeParking()
 		{ 
-			System.out.println("You are not going to go around the board in reverse!");
+			System.out.println("You are now going to go around the board in reverse!");
 			if (!MonopolyRunner.players.get(Playing.currentPlayer).isInReverse())
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(true);
 			else
@@ -167,12 +169,12 @@ public class OptionsWhenYouLand
 		//test commit
 		public static void landOnCommunityChest()
 		{
-			System.out.println("land on community chest test");
+			System.out.println("\n<<<This is still a work in progress.>>>\n");
 		}
 		
 		public static void landOnChance()
 		{ 
-			System.out.println("land on chance test");
+			System.out.println("\n<<<This is still a work in progress.>>>\n");
 		}
 		
 		public static void landOnGoToJail()

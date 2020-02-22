@@ -61,7 +61,7 @@ public class Introduction
 
 				System.out.println("Player 1, what is your name?");
 				String playerOneName = userStringInput.nextLine();
-				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
+				System.out.println("Great! Hello " + playerOneName + ", you are player 1.");
 
 				
 				ArrayList<BuyableProperties> playerOneProperties = new ArrayList<BuyableProperties>(); 
@@ -73,7 +73,7 @@ public class Introduction
 
 				System.out.println("Player 2, what is your name?");
 				String playerTwoName = userStringInput.nextLine();
-				System.out.println("Great! hello " + playerTwoName + ", you are player 2.");
+				System.out.println("Great! Hello " + playerTwoName + ", you are player 2.");
 
 				
 				ArrayList<BuyableProperties> playerTwoProperties = new ArrayList<BuyableProperties>(); 
