@@ -164,7 +164,7 @@ public class OptionsWhenYouLand
 			else
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(false);
 		}
-		
+		//test commit
 		public static void landOnCommunityChest()
 		{
 			System.out.println("land on community chest test");
@@ -182,10 +182,7 @@ public class OptionsWhenYouLand
 			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
 			MonopolyRunner.players.get(Playing.currentPlayer).setInJail(true);
 			
-			//still have to add stay for one turn 
-			
-			
-			
+			//still have to add stay for one turn
 		}
 		
 		public static void passGo()
@@ -197,7 +194,7 @@ public class OptionsWhenYouLand
 		public static void landOnUtility()
 		{ 
 			
-			System.out.println("land on utility test");
+			BuyThings.buyPlaces(); 
 			
 		}
 		

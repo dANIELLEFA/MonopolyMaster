@@ -6,10 +6,11 @@ public class Player
 		private String name;
 		private int totalMoney;
 		private int placeOnBoard;
-		private ArrayList<BuyableProperties> playerProperties ;//= new ArrayList<BuyableProperties>();
+		private ArrayList<BuyableProperties> playerProperties = new ArrayList<BuyableProperties>();
 		private boolean getOutOfJail;
 		private boolean inReverse;
 		private boolean inJail;
+
 
 		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g, boolean iJ, boolean iR)
 			{
@@ -87,6 +88,7 @@ public class Player
 			{
 				this.playerProperties = playerProperties;
 			}
+		
 
 
 	}
