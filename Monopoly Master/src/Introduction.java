@@ -59,13 +59,13 @@ public class Introduction
 				System.out.println("Player 1, what is your name?");
 				String playerOneName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
-				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, null, false));
+				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, null, false, false, false));
 				System.out.println();
 
 				System.out.println("Player 2, what is your name?");
 				String playerTwoName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerTwoName + ", you are player 2.");
-				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, null, false));
+				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, null, false, false, false));
 				System.out.println();
 			}
 
