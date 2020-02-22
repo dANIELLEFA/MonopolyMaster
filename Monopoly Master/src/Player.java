@@ -7,17 +7,37 @@ public class Player
 		private int totalMoney;
 		private int placeOnBoard;
 		private ArrayList<BuyableProperties> playerProperties = new ArrayList<BuyableProperties>();
-		private boolean getOutOfJail; 
+		private boolean getOutOfJail;
+		private boolean inReverse;
+		private boolean inJail;
 
-		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g)
+
+		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g, boolean iJ, boolean iR)
 			{
 				name = n;
 				totalMoney = t;
 				placeOnBoard = p;
 				playerProperties = pR;
-				getOutOfJail = g; 
+				getOutOfJail = g;
+				inReverse = iR;
 				
 			}
+
+		public boolean isInJail() {
+			return inJail;
+		}
+
+		public void setInJail(boolean inJail) {
+			this.inJail = inJail;
+		}
+
+		public boolean isInReverse() {
+			return inReverse;
+		}
+
+		public void setInReverse(boolean inReverse) {
+			this.inReverse = inReverse;
+		}
 
 		public boolean isGetOutOfJail()
 			{

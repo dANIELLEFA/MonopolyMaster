@@ -152,12 +152,17 @@ public class OptionsWhenYouLand
 		public static void landOnTax()
 		{ 
 			System.out.println("LandOnTax method test");
+			
 				
 		}
 		
 		public static void landOnFreeParking()
 		{ 
-			System.out.println("Land on free parking method test");
+			System.out.println("You are not going to go around the board in reverse!");
+			if (!MonopolyRunner.players.get(Playing.currentPlayer).isInReverse())
+				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(true);
+			else
+				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(false);
 		}
 		//test commit
 		public static void landOnCommunityChest()
@@ -175,14 +180,15 @@ public class OptionsWhenYouLand
 			System.out.println("You landed on GO TO JAIL, now moving you to jail...");
 			
 			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
+			MonopolyRunner.players.get(Playing.currentPlayer).setInJail(true);
 			
 			//still have to add stay for one turn
 		}
 		
 		public static void passGo()
 		{ 
-			int previousMoney = MonopolyRunner.players.get(0).getTotalMoney();
-			MonopolyRunner.players.get(0).setTotalMoney(previousMoney+ 200);
+			int previousMoney = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney();
+			MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(previousMoney + 200);
 		}
 		
 		public static void landOnUtility()
