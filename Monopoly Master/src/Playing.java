@@ -8,40 +8,73 @@ public class Playing
 
 		static boolean playing = true;
 		
+		static int diceRoll;
+		
 		public static void play()
 		{
 			while(playing)
 				{
 					SwitchPlayers.switchCurrentPlayer();
 					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + " you are at " 
-					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() +".");
+					if (checkJail())
+					{
+						//do jail
+					}
+					else
+					{
+						introduceTurn();
+					}
 					
-					System.out.println("Press enter to roll the dice.");
-					String enterToContinue = MonopolyRunner.userStringInput.nextLine();
-					Dice.rollDice();
-
-					MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + Dice.diceTotal);
+					diceRoll = Dice.rollDice();
 					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + Dice.diceTotal +". You landed on " 
+					if (checkReverse())
+					{
+						moveBackwards();
+					}
+					else
+					{
+						moveForward();
+					}
+					
+					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ". You landed on " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
 					
 					OptionsWhenYouLand.landOnPlace();
-					
-					SwitchPlayers.switchCurrentPlayer();
-					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName()+" you are at  " 
-					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() +".");
-					
-					System.out.println("Press enter to roll the dice.");
-					String enterToContinueTwo = MonopolyRunner.userStringInput.nextLine();
-					Dice.rollDice();
-					
-					MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + Dice.diceTotal);
-					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName()+ ", you rolled a total of " +Dice.diceTotal
-							+". You landed on " + MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
-					OptionsWhenYouLand.landOnPlace();
 				}
+		}
+		
+		private static void introduceTurn()
+		{
+			System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you are at " 
+					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() +".");
+			System.out.println("Press enter to roll the dice.");
+			String enterToContinue = MonopolyRunner.userStringInput.nextLine();
+		}
+		
+		private static boolean checkJail()
+		{
+			if(MonopolyRunner.players.get(currentPlayer).isInJail())
+				return true;
+			
+			return false;
+			
+		}
+		
+		private static boolean checkReverse()
+		{
+			if (MonopolyRunner.players.get(currentPlayer).isInReverse())
+				return true;
+			
+			return false;
+		}
+		
+		private static void moveForward()
+		{
+			MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll);
+		}
+		
+		private static void moveBackwards()
+		{
+			MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll);
 		}
 	}
