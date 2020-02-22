@@ -8,9 +8,10 @@ public class OptionsWhenYouLand
 		
 		static int place = MonopolyRunner.players.get(Playing.currentPlayer).getPlaceOnBoard();
 		
+		
 		public static void landOnPlace()
 		{ 
-			
+			place = MonopolyRunner.players.get(Playing.currentPlayer).getPlaceOnBoard();
 			
 			if(MonopolyRunner.board.get(place).getType().equals("Property"))
 				{
@@ -27,12 +28,12 @@ public class OptionsWhenYouLand
 					landOnTax(); 
 				}
 			
-			else if(MonopolyRunner.board.get(place).getType().equals("FreeParking"))
+			else if(MonopolyRunner.board.get(place).getType().equals("Free Parking"))
 				{
 					landOnFreeParking(); 
 				}
 			
-			else if(MonopolyRunner.board.get(place).getType().equals("CommunityChest"))
+			else if(MonopolyRunner.board.get(place).getType().equals("Community Chest"))
 				{ 
 					landOnCommunityChest(); 
 				}
@@ -72,32 +73,42 @@ public class OptionsWhenYouLand
 				
 			String propertyName = MonopolyRunner.board.get(place).getName();  
 			String propertyColor = ((Properties) MonopolyRunner.board.get(place)).getColor();
-			System.out.println("You landed on " + propertyName + " property. The color of this property is " + propertyColor);
 
+			System.out.println("The Color Of this property is " + propertyColor + ".");
+			
 			if(((Properties) MonopolyRunner.board.get(place)).isBought())
 				{
 					
 					//check if current player owns it 
 					if(MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().contains(propertyName))
 						{
-							System.out.println("You currently own ");
+							System.out.println("You currently own this property.");
 						}
 					
 					//check if not current player owns it 
 					else if(MonopolyRunner.players.get(Playing.notCurrentPlayer).getPlayerProperties().contains(propertyName))
 						{
 							int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+							
 							String playerOneName = MonopolyRunner.players.get(Playing.currentPlayer).getName(); 
+							
 							String playerTwoName = MonopolyRunner.players.get(Playing.notCurrentPlayer).getName(); 
+							
 							System.out.println("This property is already owned. " + playerOneName + ", you owe the owner $" + amountToPay);
+							
 							int currentMoneyPlayerOne = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
+							
 							int currentMoneyPlayerTwo = MonopolyRunner.players.get(Playing.notCurrentPlayer).getTotalMoney(); 
+							
 							MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(currentMoneyPlayerOne - amountToPay); 
+							
 							MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(currentMoneyPlayerTwo + amountToPay);
+							
 							System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
+							
 							System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
+							
 						}
-	
 				}
 			
 			else 
@@ -140,27 +151,34 @@ public class OptionsWhenYouLand
 				
 		public static void landOnTax()
 		{ 
+			System.out.println("LandOnTax method test");
 				
 		}
 		
 		public static void landOnFreeParking()
 		{ 
-			
+			System.out.println("Land on free parking method test");
 		}
 		
 		public static void landOnCommunityChest()
 		{
-			
+			System.out.println("land on community chest test");
 		}
 		
 		public static void landOnChance()
 		{ 
-			
+			System.out.println("land on chance test");
 		}
 		
 		public static void landOnGoToJail()
 		{
 			System.out.println("You landed on GO TO JAIL, now moving you to jail...");
+			
+			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
+			
+			//still have to add stay for one turn 
+			
+			
 			
 		}
 		
@@ -173,13 +191,13 @@ public class OptionsWhenYouLand
 		public static void landOnUtility()
 		{ 
 			
-			
+			System.out.println("land on utility test");
 			
 		}
 		
 		public static void justVisitingJail()
 		{ 
-			
+			System.out.println("land on just visiting jail test");
 		}
 		
 		

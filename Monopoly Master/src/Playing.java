@@ -26,13 +26,14 @@ public class Playing
 					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + Dice.diceTotal +". You landed on " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
 					
-					//OptionsWhenYouLand.landOnPlace();
+					OptionsWhenYouLand.landOnPlace();
 					
 					SwitchPlayers.switchCurrentPlayer();
 					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName()+" are at  " 
+					System.out.println(MonopolyRunner.players.get(currentPlayer).getName()+" you are at  " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() +".");
 					
+					System.out.println("Press enter to roll the dice.");
 					String enterToContinueTwo = MonopolyRunner.userStringInput.nextLine();
 					Dice.rollDice();
 					
@@ -40,7 +41,7 @@ public class Playing
 					
 					System.out.println(MonopolyRunner.players.get(currentPlayer).getName()+ ", you rolled a total of " +Dice.diceTotal
 							+". You landed on " + MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
-					//OptionsWhenYouLand.landOnPlace();
+					OptionsWhenYouLand.landOnPlace();
 				}
 		}
 	}

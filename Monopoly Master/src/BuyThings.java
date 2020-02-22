@@ -11,17 +11,20 @@ public class BuyThings
 					{
 						String propertyName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
 						String propertyColor = ((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).getColor();
-						System.out.println("You landed on " + propertyName + " property. The color of this property is "
-								+ propertyColor);
+//						System.out.println("You landed on " + propertyName + " property. The color of this property is "
+//								+ propertyColor);
 						if (!BuyableProperties.isBought())
 							{
 								System.out.println("Would you like to buy this property? (\"Yes or no\")");
 								String answer = userStringInput.nextLine();
 								String proofAnswer = answer.toUpperCase();
-								Properties property = ((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								BuyableProperties property = ((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								
 								if (proofAnswer.equals("YES"))
 									{
-										MonopolyRunner.players.get(0).getPlayerProperties().add(property);
+									System.out.println("test");
+									
+										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(property);
 										((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 								
