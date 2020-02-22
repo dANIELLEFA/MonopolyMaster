@@ -159,7 +159,7 @@ public class OptionsWhenYouLand
 		{ 
 			System.out.println("Land on free parking method test");
 		}
-		
+		//test commit
 		public static void landOnCommunityChest()
 		{
 			System.out.println("land on community chest test");
