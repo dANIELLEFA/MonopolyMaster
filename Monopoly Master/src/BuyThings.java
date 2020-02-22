@@ -9,62 +9,74 @@ public class BuyThings
 
 				if (MonopolyRunner.board.get(OptionsWhenYouLand.place).getType().equals("Property"))
 					{
-						String propertyName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
-						String propertyColor = ((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).getColor();
-//						System.out.println("You landed on " + propertyName + " property. The color of this property is "
-//								+ propertyColor);
 						if (!BuyableProperties.isBought())
 							{
-								System.out.println("Would you like to buy this property? (\"Yes or no\")");
+								System.out.println("Would you like to buy this property?\n(1) Yes\n(2) No");
 								String answer = userStringInput.nextLine();
-								String proofAnswer = answer.toUpperCase();
-								BuyableProperties property = ((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								BuyableProperties myPropertyToAdd = ((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
 								
-								if (proofAnswer.equals("YES"))
+								if (answer.equals("1") || answer.toUpperCase().equals("YES"))
 									{
-									System.out.println("test");
-									
-										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(property);
-										((Properties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myPropertyToAdd);
+										((Properties)MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
-								
 							}
+						
+						System.out.println("TEST!!!: ---> ");
+			
+						for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
+						{
+							System.out.println(p.getName() + " " + p.getPrice()); 
+						}
 
 					}
+				
 				else if (MonopolyRunner.board.get(OptionsWhenYouLand.place).getType().equals("Railroad"))
 					{
-						String railroadName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
-						System.out.println("You landed on " + railroadName + ".");
 						if (!BuyableProperties.isBought())
 							{
-								System.out.println("Would you like to buy this railroad? (\"Yes or no\")");
+								System.out.println("Would you like to buy this property?\n(1) Yes\n(2) No");
 								String answer = userStringInput.nextLine();
-								String proofAnswer = answer.toUpperCase();
-								Railroads railroad = ((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place));
-								if (proofAnswer.equals("YES"))
+	
+								BuyableProperties myRailroadToAdd = ((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								
+								if (answer.equals("1") || answer.toUpperCase().contentEquals("YES"))
 									{
-										MonopolyRunner.players.get(0).getPlayerProperties().add(railroad);
+										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myRailroadToAdd);
 										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
+								
+System.out.println("TEST!!!: ---> ");
+								
+								for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
+								{
+									System.out.println(p.getName() + " " + p.getPrice()); 
+								}
 								
 							}
 
 					}
 				else if (MonopolyRunner.board.get(OptionsWhenYouLand.place).getType().equals("Utility"))
 					{
-						String utilityName = MonopolyRunner.board.get(OptionsWhenYouLand.place).getName();
-						System.out.println("You landed on " + utilityName + ".");
+					
 						if (!BuyableProperties.isBought())
 							{
-								System.out.println("Would you like to buy this utility? (\"Yes or no\")");
+								System.out.println("Would you like to buy this property?\n(1) Yes\n(2) No");
 								String answer = userStringInput.nextLine();
-								String proofAnswer = answer.toUpperCase();
-								Utilities utility = ((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place));
-								if (proofAnswer.equals("YES"))
+								
+								BuyableProperties myUtilityToAdd = ((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place));
+								
+								if (answer.equals("YES"))
 									{
-										MonopolyRunner.players.get(0).getPlayerProperties().add(utility);
-										((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myUtilityToAdd);
+										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
+System.out.println("TEST!!!: ---> ");
+								
+								for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
+								{
+									System.out.println(p.getName() + " " + p.getPrice()); 
+								}
 								
 							}
 

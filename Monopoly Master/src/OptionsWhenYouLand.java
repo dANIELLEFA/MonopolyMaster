@@ -176,10 +176,7 @@ public class OptionsWhenYouLand
 			
 			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
 			
-			//still have to add stay for one turn 
-			
-			
-			
+			//still have to add stay for one turn
 		}
 		
 		public static void passGo()
@@ -191,7 +188,7 @@ public class OptionsWhenYouLand
 		public static void landOnUtility()
 		{ 
 			
-			System.out.println("land on utility test");
+			BuyThings.buyPlaces(); 
 			
 		}
 		

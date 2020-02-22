@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList; 
 
 public class Introduction
 	{
@@ -54,18 +55,28 @@ public class Introduction
 					System.out.println("Great, you chose \"National Parks Monopoly\"");
 					}
 				
+				
+				
 				System.out.println();
 
 				System.out.println("Player 1, what is your name?");
 				String playerOneName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerOneName + ", you are player 1.");
-				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, null, false));
+				
+				ArrayList<BuyableProperties> playerOneProperties = new ArrayList<BuyableProperties>(); 
+				
+				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, playerOneProperties, false));
 				System.out.println();
+				
+				
+				
 
 				System.out.println("Player 2, what is your name?");
 				String playerTwoName = userStringInput.nextLine();
 				System.out.println("Great! hello " + playerTwoName + ", you are player 2.");
-				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, null, false));
+				
+				ArrayList<BuyableProperties> playerTwoProperties = new ArrayList<BuyableProperties>(); 
+				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, playerTwoProperties, false));
 				System.out.println();
 			}
 
