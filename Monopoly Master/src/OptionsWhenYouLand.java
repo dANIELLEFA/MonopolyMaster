@@ -127,7 +127,7 @@ public class OptionsWhenYouLand
 							
 							System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne);
 							
-							System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo);
+							System.out.println(playerTwoName + ", your total money is now $" + updatedMoneyTwo);
 						}
 					
 				}
@@ -275,6 +275,7 @@ public class OptionsWhenYouLand
 		
 		public static void passGo()
 		{ 
+			System.out.println("You are at go");
 			int previousMoney = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney();
 			MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(previousMoney + 200);
 		}
