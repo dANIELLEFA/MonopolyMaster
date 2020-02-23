@@ -51,31 +51,38 @@ public class Playing
 					
 					if (checkJail())
 					{
-						//do jail
+						String playerName = MonopolyRunner.players.get(currentPlayer).getName(); 
+						
+							System.out.println(playerName + ", you don't get to roll this turn. You're in Jail!");
+							
+							
 					}
 					
-					else
+					
+					else 
 					{
 						introduceTurn();
+						
+						
+						diceRoll = Dice.rollDice();
+						
+						if (checkReverse())
+						{
+							moveBackwards();
+						}
+						else
+						{
+							moveForward();
+						}
+						
+						System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+						System.out.println();
+						System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
+						+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
+						
+						OptionsWhenYouLand.landOnPlace();
 					}
-					
-					diceRoll = Dice.rollDice();
-					
-					if (checkReverse())
-					{
-						moveBackwards();
-					}
-					else
-					{
-						moveForward();
-					}
-					
-					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
-					System.out.println();
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
-					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
-					
-					OptionsWhenYouLand.landOnPlace();
+						
 				}
 		}
 		
@@ -163,4 +170,6 @@ public class Playing
 			}
 
 		}
+		
+		
 	}
