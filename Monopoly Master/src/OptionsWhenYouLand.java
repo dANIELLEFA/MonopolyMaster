@@ -9,6 +9,8 @@ public class OptionsWhenYouLand
 		static int place = MonopolyRunner.players.get(Playing.currentPlayer).getPlaceOnBoard();
 		
 		
+		
+		
 		public static void landOnPlace()
 		{ 
 			place = MonopolyRunner.players.get(Playing.currentPlayer).getPlaceOnBoard();
@@ -68,25 +70,35 @@ public class OptionsWhenYouLand
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		public static void landOnProperty()
 			{ 
 				
 			String propertyName = MonopolyRunner.board.get(place).getName();  
 			String propertyColor = ((Properties) MonopolyRunner.board.get(place)).getColor();
-
 			System.out.println("The Color Of this property is " + propertyColor + ".");
 			
 			if(((BuyableProperties) MonopolyRunner.board.get(place)).isBought())
 				{
+					String currentPropertyName = ((Properties) MonopolyRunner.board.get(place)).getName(); 
 					
-					//check if current player owns it 
-					if(MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().contains(propertyName))
-						{
-							System.out.println("You currently own this property.");
-						}
 					
-					//check if not current player owns it 
-					else if(MonopolyRunner.players.get(Playing.notCurrentPlayer).getPlayerProperties().contains(propertyName))
+					for(int i = 0; i < MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().size(); i++)
+					{ 
+						//check if current player owns property
+						if((MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().get(i).getName()).equals(currentPropertyName))
+								{ 
+									System.out.println("You currently own this property.");
+								}
+						
+						//other player must own the property then 
+						else 
 						{
 							int amountToPay = ((Properties) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
 							
@@ -94,54 +106,87 @@ public class OptionsWhenYouLand
 							
 							String playerTwoName = MonopolyRunner.players.get(Playing.notCurrentPlayer).getName(); 
 							
-							System.out.println("This property is already owned. " + playerOneName + ", you owe the owner $" + amountToPay);
+							System.out.println(playerOneName + ", you owe the owner $" + amountToPay);
 							
 							int currentMoneyPlayerOne = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
 							
 							int currentMoneyPlayerTwo = MonopolyRunner.players.get(Playing.notCurrentPlayer).getTotalMoney(); 
 							
-							MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(currentMoneyPlayerOne - amountToPay); 
+							int updatedMoneyOne = currentMoneyPlayerOne - amountToPay; 
 							
-							MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(currentMoneyPlayerTwo + amountToPay);
+							int updatedMoneyTwo = currentMoneyPlayerTwo + amountToPay; 
+							
+							MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(updatedMoneyOne); 
+							
+							MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(updatedMoneyTwo);
 							
 							System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
 							
 							System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
-							
 						}
+					}
 				}
-			
+
 			else 
 				{ 
+				
 				BuyThings.buyPlaces();
+				
 
 				}
-
-		}
+		
+	}
 				
+		
+		
+		
+		
+		
 	    public static void landOnRailroad()
 		{ 
-			String railroadName = ((Railroads) MonopolyRunner.board.get(place)).getName();
+			String currentRailroadName = ((Railroads) MonopolyRunner.board.get(place)).getName();
 		
 			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
 				{
+				
+				for(int i = 0; i < MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().size(); i++)
+				{
+					if((MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().get(i).getName()).equals(currentRailroadName))
+					{ 
+						System.out.println("You currently own this railroad.");
+					}
 					
-
-					if(MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().contains(railroadName))
-						{
-							System.out.println("Thankfully you own this railroad.");
-							Playing.play();
-						}
-					else
-						{
-							// takes away current player money
-							// adds to other player ok
-							int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
-							((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney() - amountToPay);
-							((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney() + amountToPay);
-							System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $" + amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
-							Playing.play();
-						}
+					else 
+					{ 
+						int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+						
+						String playerOneName = MonopolyRunner.players.get(Playing.currentPlayer).getName(); 
+						
+						String playerTwoName = MonopolyRunner.players.get(Playing.notCurrentPlayer).getName(); 
+						
+						System.out.println(playerOneName + ", you owe the owner $" + amountToPay);
+						
+						int currentMoneyPlayerOne = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
+						
+						int currentMoneyPlayerTwo = MonopolyRunner.players.get(Playing.notCurrentPlayer).getTotalMoney(); 
+						
+						int updatedMoneyOne = currentMoneyPlayerOne - amountToPay; 
+						
+						int updatedMoneyTwo = currentMoneyPlayerTwo + amountToPay; 
+						
+						MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(updatedMoneyOne); 
+						
+						MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(updatedMoneyTwo);
+						
+//						System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
+//						
+//						System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
+//						
+//						((Player) MonopolyRunner.players.get(Playing.currentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney() - amountToPay);
+//						((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney() + amountToPay);
+//						System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $" + amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
+					}
+				}
 				}
 			
 			else
@@ -151,18 +196,28 @@ public class OptionsWhenYouLand
 
 		}
 				
+	    
+	    
+	    
+	    
+	    
 		public static void landOnTax()
 		{ 
 			int previousMoney = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney();
 			MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(previousMoney - (((Tax) MonopolyRunner.board.get(place)).getAmountOfTax()));
-			System.out.println("You now have to pay tax! Your existing amount of money is " + previousMoney + " you paid $" + ((Tax) MonopolyRunner.board.get(place)).getAmountOfTax() + " in taxes. Your bank account is now " + MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney());
+			System.out.println("You now have to pay tax! You had $" + previousMoney + " you paid $" + ((Tax) MonopolyRunner.board.get(place)).getAmountOfTax() + " in taxes. You now have  $" + MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney());
 			
 				
 		}
 		
+		
+		
+		
+		
 		public static void landOnFreeParking()
 		{ 
 			System.out.println("You are now going to go around the board in reverse!");
+			
 			if (!MonopolyRunner.players.get(Playing.currentPlayer).isInReverse())
 			{
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(true);
@@ -172,20 +227,29 @@ public class OptionsWhenYouLand
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(false);
 			}
 		}
-		//test commit
+		
+		
+		
+		
 		public static void landOnCommunityChest()
 		{
 			System.out.println("\n<<<This is still a work in progress.>>>\n");
 		}
+
+		
 		
 		public static void landOnChance()
 		{ 
 			System.out.println("\n<<<This is still a work in progress.>>>\n");
 		}
 		
+		
+		
+		
+		
 		public static void landOnGoToJail()
 		{
-			System.out.println("You landed on GO TO JAIL, now moving you to jail...");
+			System.out.println("Now moving you to jail...");
 			
 			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
 			MonopolyRunner.players.get(Playing.currentPlayer).setInJail(true);
@@ -193,23 +257,33 @@ public class OptionsWhenYouLand
 			//still have to add stay for one turn
 		}
 		
+		
+		
+		
 		public static void passGo()
 		{ 
 			int previousMoney = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney();
 			MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(previousMoney + 200);
 		}
 		
+		
+		
 		public static void landOnUtility()
 		{ 
-			
-			System.out.println("Test");//BuyThings.buyPlaces();  
+			//add pay rent thing based on dice roll
+			BuyThings.buyPlaces();  
 			
 		}
 		
+		
+		
 		public static void justVisitingJail()
 		{ 
-			System.out.println("land on just visiting jail test");
+			System.out.println("Don't worry, you are Just Visiting");
 		}
+		
+		
+		
 		
 		
 		
