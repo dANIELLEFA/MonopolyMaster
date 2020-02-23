@@ -153,7 +153,9 @@ public class OptionsWhenYouLand
 				
 		public static void landOnTax()
 		{ 
-			System.out.println("LandOnTax method test");
+			int previousMoney = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney();
+			MonopolyRunner.players.get(Playing.currentPlayer).setTotalMoney(previousMoney - (((Tax) MonopolyRunner.board.get(place)).getAmountOfTax()));
+			System.out.println("You now have to pay tax! Your existing amount of money is " + previousMoney + " you paid $" + ((Tax) MonopolyRunner.board.get(place)).getAmountOfTax() + " in taxes. Your bank account is now " + MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney());
 			
 				
 		}
