@@ -1,6 +1,7 @@
 
 public class PassGo extends NotBuyable
 	{
+	// PassGo cannot be cast as to class Buyable properties
 		private int getMoney;
 		
 		// name, type, place on board, on space, get money

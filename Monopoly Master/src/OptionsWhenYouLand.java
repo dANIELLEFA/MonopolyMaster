@@ -124,7 +124,9 @@ public class OptionsWhenYouLand
 							
 							System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne+ ".");
 							
+
 							System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo + ".");
+
 						}
 					
 				}
@@ -328,12 +330,14 @@ public class OptionsWhenYouLand
 			
 			MonopolyRunner.players.get(Playing.currentPlayer).setPlaceOnBoard(40);
 			MonopolyRunner.players.get(Playing.currentPlayer).setInJail(true);
+
+
 		}
 		
 		
 		public static void justVisitingJail()
 		{ 
-			System.out.println("Don't worry, you are Just Visiting");
+			System.out.println("Don't worry, you are Just Visiting.");
 		}
 		
 		
