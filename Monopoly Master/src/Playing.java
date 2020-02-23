@@ -18,31 +18,38 @@ public class Playing
 					
 					if (checkJail())
 					{
-						//do jail
+						String playerName = MonopolyRunner.players.get(currentPlayer).getName(); 
+						
+							System.out.println(playerName + ", you don't get to roll this turn. You're in Jail!");
+							
+							
 					}
 					
-					else
+					
+					else 
 					{
 						introduceTurn();
+						
+						
+						diceRoll = Dice.rollDice();
+						
+						if (checkReverse())
+						{
+							moveBackwards();
+						}
+						else
+						{
+							moveForward();
+						}
+						
+						System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+						System.out.println();
+						System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
+						+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
+						
+						OptionsWhenYouLand.landOnPlace();
 					}
-					
-					diceRoll = Dice.rollDice();
-					
-					if (checkReverse())
-					{
-						moveBackwards();
-					}
-					else
-					{
-						moveForward();
-					}
-					
-					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
-					System.out.println();
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
-					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
-					
-					OptionsWhenYouLand.landOnPlace();
+						
 				}
 		}
 		
@@ -114,7 +121,8 @@ public class Playing
 
 		private static void passGoOverTurn()
 		{
-			System.out.println("You passed go! Recieve $200!");
+			String currentPlayerName = MonopolyRunner.players.get(currentPlayer).getName(); 
+			System.out.println(currentPlayerName + " you passed go! You get $200!");
 			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(currentPlayer).getTotalMoney() + 200);
 			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".\n");
 		}
@@ -129,4 +137,6 @@ public class Playing
 			}
 
 		}
+		
+		
 	}
