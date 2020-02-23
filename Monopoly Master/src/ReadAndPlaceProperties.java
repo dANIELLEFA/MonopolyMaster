@@ -25,6 +25,7 @@ public class ReadAndPlaceProperties
 				
 				String[] information = propertyAbout.split("[+]");
 				
+				
 				String name = information[0];
 				int price = Integer.parseInt(information[1]);
 				int costWhenLandedOn = Integer.parseInt(information[2]);
