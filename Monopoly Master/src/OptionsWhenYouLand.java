@@ -125,7 +125,7 @@ public class OptionsWhenYouLand
 							System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne+ ".");
 							
 
-							System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo + ".");
+							System.out.println(playerTwoName + ", your total money is now $" + updatedMoneyTwo + ".");
 
 						}
 					
@@ -195,7 +195,7 @@ public class OptionsWhenYouLand
 						
 						System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne + ".");
 						
-						System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo + ".");
+						System.out.println(playerTwoName + ", your total money is now $" + updatedMoneyTwo + ".");
 
 					}
 				
@@ -258,7 +258,7 @@ public class OptionsWhenYouLand
 						
 						System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne + ".");
 						
-						System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo + ".");
+						System.out.println(playerTwoName + ", your total money is now $" + updatedMoneyTwo + ".");
 					}
 				
 				}
