@@ -27,7 +27,8 @@ public class MakeOtherPieces
 								200, false, 0, 0));
 						MonopolyRunner.board
 								.add(new Railroads("The Scenic Railroad", "Railroad", 35, 200, false, 0, 0));
-					} else if (MonopolyRunner.changeThemes == 0)
+					} 
+				else if (MonopolyRunner.changeThemes == 0)
 					{
 						MonopolyRunner.board
 								.add(new Railroads("Reading Railroad", "Railroad", 5, 200, false, 0, 0));

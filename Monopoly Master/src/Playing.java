@@ -112,7 +112,8 @@ public class Playing
 			System.out.println("You passed go! Recieve $200!");
 			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(currentPlayer).getTotalMoney() + 200);
 			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".");
-
+		}
+		
 		private static void checkMoney()
 		{ 
 			if(MonopolyRunner.players.get(currentPlayer).getTotalMoney()<= 0)

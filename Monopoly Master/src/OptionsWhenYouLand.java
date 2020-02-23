@@ -146,7 +146,7 @@ public class OptionsWhenYouLand
 		{ 
 			String currentRailroadName = ((Railroads) MonopolyRunner.board.get(place)).getName();
 		
-			if(((Railroads) MonopolyRunner.board.get(place)).isBought())
+			if(((BuyableProperties) MonopolyRunner.board.get(place)).isBought())
 				{
 				
 				for(int i = 0; i < MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().size(); i++)
