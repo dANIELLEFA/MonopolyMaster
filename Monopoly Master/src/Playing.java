@@ -37,6 +37,8 @@ public class Playing
 						moveForward();
 					}
 					
+					System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+					System.out.println();
 					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
 					
@@ -46,10 +48,12 @@ public class Playing
 		
 		private static void introduceTurn()
 		{
+			System.out.println();
 			System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you are at " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() +".");
 			System.out.println("Press enter to roll the dice.");
 			String enterToContinue = MonopolyRunner.userStringInput.nextLine();
+			
 		}
 		
 		private static boolean checkJail()

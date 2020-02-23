@@ -71,7 +71,7 @@ public class BuyThings
 					int currentPriceThree = ((Utilities)MonopolyRunner.board.get(OptionsWhenYouLand.place)).getPrice();
 					int currentMoneyThree = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
 					
-					System.out.println("The price of this Railroad is $" + currentPriceThree + ". You have a total of $" + currentMoneyThree +", would you like to buy this Railroad\n(1) Yes\n(2) No");
+					System.out.println("The price of this Utility is $" + currentPriceThree + ". You have a total of $" + currentMoneyThree +", would you like to buy this Utility\n(1) Yes\n(2) No");
 					
 								String answer = userStringInput.nextLine();
 								
