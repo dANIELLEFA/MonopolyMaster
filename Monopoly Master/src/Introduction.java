@@ -79,6 +79,9 @@ public class Introduction
 				ArrayList<BuyableProperties> playerTwoProperties = new ArrayList<BuyableProperties>(); 
 				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, playerTwoProperties, false, false, false));
 				System.out.println();
+				
+				
+			
 			}
 
 

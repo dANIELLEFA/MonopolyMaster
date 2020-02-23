@@ -125,9 +125,9 @@ public class OptionsWhenYouLand
 							
 							MonopolyRunner.players.get(Playing.notCurrentPlayer).setTotalMoney(updatedMoneyTwo);
 							
-							System.out.println(playerOneName + ", your total money is now $" + currentMoneyPlayerOne);
+							System.out.println(playerOneName + ", your total money is now $" + updatedMoneyOne);
 							
-							System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
+							System.out.println(playerTwoName + ", your toatl money is now $" + updatedMoneyTwo);
 						}
 					
 				}
