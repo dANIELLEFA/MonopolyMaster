@@ -74,8 +74,14 @@ System.out.println("TEST!!!: ---> ");
 								
 								if (answer.equals("YES"))
 									{
+
 										MonopolyRunner.players.get(currentPlaceOnBoardThree).getPlayerProperties().add(myUtilityToAdd);
+
+									
+
+
 										((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+
 									}
 								System.out.println("TEST!!!: ---> ");
 								
