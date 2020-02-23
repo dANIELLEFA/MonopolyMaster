@@ -25,7 +25,9 @@ public class MonopolyRunner
 				MakeOtherPieces.makeUtilities();
 				MakeOtherPieces.makeAllOthers();
 				Collections.sort(board, new BoardSorter()); 
+				//board is made 
 				
+				//playing 
 				Playing.play();
 				
 				//CommunityChestReader.readCommunityChest();

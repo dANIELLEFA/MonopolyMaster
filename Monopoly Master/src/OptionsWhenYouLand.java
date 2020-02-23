@@ -113,7 +113,8 @@ public class OptionsWhenYouLand
 			
 			else 
 				{ 
-					BuyThings.buyPlaces();
+				BuyThings.buyPlaces();
+
 				}
 
 		}
@@ -145,8 +146,7 @@ public class OptionsWhenYouLand
 			
 			else
 				{
-					BuyThings.buyPlaces();
-					
+				BuyThings.buyPlaces(); 
 				}
 
 		}
@@ -162,9 +162,13 @@ public class OptionsWhenYouLand
 		{ 
 			System.out.println("You are now going to go around the board in reverse!");
 			if (!MonopolyRunner.players.get(Playing.currentPlayer).isInReverse())
+			{
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(true);
+			}
 			else
+			{
 				MonopolyRunner.players.get(Playing.currentPlayer).setInReverse(false);
+			}
 		}
 		//test commit
 		public static void landOnCommunityChest()
@@ -196,7 +200,7 @@ public class OptionsWhenYouLand
 		public static void landOnUtility()
 		{ 
 			
-			BuyThings.buyPlaces();  
+			System.out.println("Test");//BuyThings.buyPlaces();  
 			
 		}
 		
