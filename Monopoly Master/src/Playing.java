@@ -6,13 +6,13 @@ public class Playing
 		static int currentPlayer = 1;
 		static int notCurrentPlayer = 0;
 
-		static boolean playing = true;
+		static boolean playingGame = true;
 		
 		static int diceRoll;
 		
 		public static void play()
 		{
-			while(playing)
+			while(playingGame)
 				{
 					SwitchPlayers.switchCurrentPlayer();
 					
