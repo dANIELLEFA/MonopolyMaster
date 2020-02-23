@@ -69,7 +69,7 @@ public class BuyThings
 								if (answer.equals("YES"))
 									{
 										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myUtilityToAdd);
-										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 								System.out.println("TEST!!!: ---> ");
 								
