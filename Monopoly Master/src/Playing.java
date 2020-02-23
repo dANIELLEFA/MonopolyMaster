@@ -1,7 +1,5 @@
 public class Playing
 	{
-		
-		
 		// which player is it
 		static int currentPlayer = 1;
 		static int notCurrentPlayer = 0;
@@ -15,11 +13,13 @@ public class Playing
 			while(playingGame)
 				{
 					SwitchPlayers.switchCurrentPlayer();
+					checkMoney();
 					
 					if (checkJail())
 					{
 						//do jail
 					}
+					
 					else
 					{
 						introduceTurn();
@@ -76,5 +76,14 @@ public class Playing
 		private static void moveBackwards()
 		{
 			MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll);
+		}
+		
+		private static void checkMoney()
+		{ 
+			if(MonopolyRunner.players.get(currentPlayer).getTotalMoney()<= 0)
+			{ 
+				System.out.println("You lose, you ran out of money.");
+				System.exit(0);
+			}
 		}
 	}
