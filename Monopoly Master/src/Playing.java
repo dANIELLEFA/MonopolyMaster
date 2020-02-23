@@ -70,12 +70,39 @@ public class Playing
 		
 		private static void moveForward()
 		{
+
+			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll > 39)
+			{
+				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoForward());
+			}
+			else
+			{
 			MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll);
+			}
 		}
 		
 		private static void moveBackwards()
 		{
+			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll < 0)
+			{
+				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoBackward());
+			}
+			else
+			{
 			MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll);
+			}
+		}
+		
+		private static int passGoForward()
+		{
+			int toGo = 39 - MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard();
+			return diceRoll - toGo - 1;
+		}
+		
+		private static int passGoBackward()
+		{
+			int toGo = MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard();
+			return 40 - (diceRoll - toGo);
 		}
 		
 		private static void checkMoney()
