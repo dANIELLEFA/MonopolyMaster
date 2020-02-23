@@ -74,6 +74,7 @@ public class Playing
 			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll > 39)
 			{
 				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoForward());
+				passGoOverTurn();
 			}
 			else
 			{
@@ -86,6 +87,7 @@ public class Playing
 			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll < 0)
 			{
 				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoBackward());
+				passGoOverTurn();
 			}
 			else
 			{
@@ -103,5 +105,12 @@ public class Playing
 		{
 			int toGo = MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard();
 			return 40 - (diceRoll - toGo);
+		}
+		
+		private static void passGoOverTurn()
+		{
+			System.out.println("You passed go! Recieve $200!");
+			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(currentPlayer).getTotalMoney() + 200);
+			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".");
 		}
 	}
