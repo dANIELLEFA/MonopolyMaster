@@ -87,16 +87,21 @@ public class OptionsWhenYouLand
 			if(((BuyableProperties) MonopolyRunner.board.get(place)).isBought())
 				{
 					String currentPropertyName = ((Properties) MonopolyRunner.board.get(place)).getName(); 
-					
+					int counter = 0; 
 					
 					for(int i = 0; i < MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().size(); i++)
 					{ 
 						//check if current player owns property
 						if((MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().get(i).getName()).equals(currentPropertyName))
 								{ 
-									System.out.println("You currently own this property.");
+									counter++; 
 								}
-						
+					}
+					
+					if(counter>0)
+					{
+						System.out.println("You already own this property");
+					}
 						//other player must own the property then 
 						else 
 						{
@@ -124,7 +129,7 @@ public class OptionsWhenYouLand
 							
 							System.out.println(playerTwoName + ", your toatl money is now $" + currentMoneyPlayerTwo);
 						}
-					}
+					
 				}
 
 			else 
@@ -149,12 +154,20 @@ public class OptionsWhenYouLand
 			if(((BuyableProperties) MonopolyRunner.board.get(place)).isBought())
 				{
 				
+				int counter = 0; 
+				
 				for(int i = 0; i < MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().size(); i++)
 				{
 					if((MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().get(i).getName()).equals(currentRailroadName))
 					{ 
-						System.out.println("You currently own this railroad.");
+						counter++; 
 					}
+				}
+				
+				if(counter>0)
+				{ 
+					System.out.println("You already own this property.");
+				}
 					
 					else 
 					{ 
@@ -186,7 +199,7 @@ public class OptionsWhenYouLand
 //						((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).setTotalMoney(((Player) MonopolyRunner.players.get(Playing.notCurrentPlayer)).getTotalMoney() + amountToPay);
 //						System.out.println(((Railroads) MonopolyRunner.board.get(place)).getName()+" is already owned. You have to pay $" + amountToPay +". You now have $" +((Player) MonopolyRunner.players.get(Playing.currentPlayer)).getTotalMoney()+"." );
 					}
-				}
+				
 				}
 			
 			else
