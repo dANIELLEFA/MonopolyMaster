@@ -16,6 +16,39 @@ public class Playing
 					
 					checkMoney();
 					
+					boolean submenu = true;
+					while (submenu)
+					{
+					System.out.println();
+					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", what would you like to do? "
+							+ "\n(1) Roll Dice"
+							+ "\n(2) See Balance"
+							+ "\n(3) See Properties Owned");
+					int chooseSubmenu = MonopolyRunner.userIntInput.nextInt();
+					
+					if (chooseSubmenu == 1)
+					{
+						submenu = false;
+						break;
+					}
+					else if (chooseSubmenu == 2)
+					{
+						System.out.println("Your total balance is $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney());
+					}
+					else if (chooseSubmenu == 3)
+					{
+						System.out.println("These are your properties owned:");
+						System.out.println("vvvvvvvvvvvvvvvvvv");
+						int counter = 1;
+						for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
+						{
+							System.out.println(counter + ": " + p.getName());
+							counter ++;
+						}
+					}
+					}
+					
+					
 					if (checkJail())
 					{
 						String playerName = MonopolyRunner.players.get(currentPlayer).getName(); 
@@ -121,9 +154,9 @@ public class Playing
 
 		private static void passGoOverTurn()
 		{
-			String currentPlayerName = MonopolyRunner.players.get(currentPlayer).getName(); 
-			System.out.println(currentPlayerName + " you passed go! You get $200!");
-			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(currentPlayer).getTotalMoney() + 200);
+			System.out.println("You passed go! Recieve $200!");
+			int previousMoney = MonopolyRunner.players.get(currentPlayer).getTotalMoney();
+			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(previousMoney + 200));
 			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".\n");
 		}
 		

@@ -10,9 +10,11 @@ public class MonopolyRunner
 		static ArrayList<Player> players = new ArrayList<Player>();
 		
 		static Scanner userStringInput = new Scanner (System.in);
+		static Scanner userIntInput = new Scanner(System.in);
 		
 		//Main Change Themes VVVVVVVVVVV
 		static int changeThemes = 1;
+		
 		
 		public static void main(String[] args) throws FileNotFoundException
 			{
