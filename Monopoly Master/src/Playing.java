@@ -13,6 +13,7 @@ public class Playing
 			while(playingGame)
 				{
 					SwitchPlayers.switchCurrentPlayer();
+					
 					checkMoney();
 					
 					if (checkJail())
@@ -36,7 +37,7 @@ public class Playing
 						moveForward();
 					}
 					
-					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ". You landed on " 
+					System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
 					+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
 					
 					OptionsWhenYouLand.landOnPlace();
@@ -111,14 +112,15 @@ public class Playing
 		{
 			System.out.println("You passed go! Recieve $200!");
 			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(currentPlayer).getTotalMoney() + 200);
-			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".");
+			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".\n");
 		}
 		
 		private static void checkMoney()
 		{ 
 			if(MonopolyRunner.players.get(currentPlayer).getTotalMoney()<= 0)
 			{ 
-				System.out.println("You lose, you ran out of money.");
+				System.out.println();
+				System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you lose. You ran out of money. " + MonopolyRunner.players.get(notCurrentPlayer).getName() + ", you won!!");
 				System.exit(0);
 			}
 
