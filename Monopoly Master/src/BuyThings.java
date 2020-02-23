@@ -18,11 +18,11 @@ public class BuyThings
 								if (answer.equals("1") || answer.toUpperCase().equals("YES"))
 									{
 										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myPropertyToAdd);
-										((Properties)MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										((BuyableProperties)MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 							}
 						
-						System.out.println("TEST!!!: ---> ");
+System.out.println("TEST!!!: ---> ");
 			
 						for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
 						{
@@ -43,7 +43,7 @@ public class BuyThings
 								if (answer.equals("1") || answer.toUpperCase().contentEquals("YES"))
 									{
 										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myRailroadToAdd);
-										((Railroads) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
 									}
 								
 								System.out.println("TEST!!!: ---> ");
@@ -69,7 +69,9 @@ public class BuyThings
 								if (answer.equals("YES"))
 									{
 										MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties().add(myUtilityToAdd);
-										((Utilities) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+
+										((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+
 									}
 								System.out.println("TEST!!!: ---> ");
 								
