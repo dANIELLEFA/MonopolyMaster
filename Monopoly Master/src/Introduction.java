@@ -65,7 +65,7 @@ public class Introduction
 
 				
 				ArrayList<BuyableProperties> playerOneProperties = new ArrayList<BuyableProperties>(); 
-				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, playerOneProperties, false, false, false));
+				MonopolyRunner.players.add(new Player(playerOneName, 1500, 0, playerOneProperties, false, false, false, 0, 0));
 				System.out.println();
 				
 				
@@ -77,7 +77,7 @@ public class Introduction
 
 				
 				ArrayList<BuyableProperties> playerTwoProperties = new ArrayList<BuyableProperties>(); 
-				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, playerTwoProperties, false, false, false));
+				MonopolyRunner.players.add(new Player(playerTwoName, 1500, 0, playerTwoProperties, false, false, false, 0, 0));
 				System.out.println();
 				System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
 
