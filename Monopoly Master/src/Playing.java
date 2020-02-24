@@ -38,7 +38,6 @@ public class Playing
 					else if (chooseSubmenu == 3)
 					{
 						System.out.println("These are your properties owned:");
-						System.out.println("vvvvvvvvvvvvvvvvvv");
 						int counter = 1;
 						for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
 						{
@@ -75,12 +74,14 @@ public class Playing
 							moveForward();
 						}
 						
-						System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
 						System.out.println();
 						System.out.println(MonopolyRunner.players.get(currentPlayer).getName() + ", you rolled a total of " + diceRoll + ".\n\nYou landed on " 
 						+ MonopolyRunner.board.get(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard()).getName() + ".");
 						
 						OptionsWhenYouLand.landOnPlace();
+						System.out.println();
+						System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+
 					}
 						
 				}
@@ -154,9 +155,10 @@ public class Playing
 
 		private static void passGoOverTurn()
 		{
-			System.out.println("You passed go! Recieve $200!");
+			System.out.println("You passed go! You get $200!");
 			int previousMoney = MonopolyRunner.players.get(currentPlayer).getTotalMoney();
-			MonopolyRunner.players.get(currentPlayer).setTotalMoney(MonopolyRunner.players.get(previousMoney + 200));
+			
+			MonopolyRunner.players.get(currentPlayer).setTotalMoney(previousMoney + 200);
 			System.out.println("You now have $" + MonopolyRunner.players.get(currentPlayer).getTotalMoney() + ".\n");
 		}
 		
