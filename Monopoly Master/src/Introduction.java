@@ -33,7 +33,7 @@ public class Introduction
 
 						else
 							{
-								System.out.println("You only have tow options, please choose again.");
+								System.out.println("You only have two options, please choose again.");
 							}
 					}
 			
