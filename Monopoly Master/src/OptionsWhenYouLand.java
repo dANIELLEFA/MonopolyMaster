@@ -170,7 +170,31 @@ public class OptionsWhenYouLand
 					
 					else 
 					{ 
-						int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+						int numberOfRailOwned = MonopolyRunner.players.get(Playing.currentPlayer).getNumberOfRailroadsOwned();
+						
+						int multiplier = 1; 
+						
+						if(numberOfRailOwned == 1)
+						{ 
+							multiplier = 1; 
+						}
+						
+						else if(numberOfRailOwned == 2)
+						{ 
+							multiplier = 2; 
+						}
+						
+						else if(numberOfRailOwned == 3)
+						{ 
+							multiplier = 4; 
+						}
+						
+						else if(numberOfRailOwned == 4)
+						{ 
+							multiplier = 8; 
+						}
+								
+						int amountToPay = (((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn())*multiplier; 
 						
 						String playerOneName = MonopolyRunner.players.get(Playing.currentPlayer).getName(); 
 						
@@ -234,7 +258,24 @@ public class OptionsWhenYouLand
 					
 					else 
 					{ 
-						int amountToPay = ((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn(); 
+						int numberOfUtilOwned = MonopolyRunner.players.get(Playing.currentPlayer).getNumberOfUtilitiesOwned();
+						
+						int multiplier = 4; 
+						int diceRoll = Dice.diceTotal;  
+						
+						if(numberOfUtilOwned == 1)
+						{ 
+							multiplier = 4; 
+						}
+						
+						else if(numberOfUtilOwned == 2)
+						{ 
+							multiplier = 10; 
+						}
+						
+						int totalMultiplier = multiplier*diceRoll; 
+						
+						int amountToPay = (((Railroads) MonopolyRunner.board.get(place)).getCostWhenLandedOn())*totalMultiplier; 
 						
 						String playerOneName = MonopolyRunner.players.get(Playing.currentPlayer).getName(); 
 						

@@ -60,6 +60,8 @@ public class BuyThings
 										int currentMoneyUpdated = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
 										System.out.println("You now own " + currentPropertyNameTwo + ". Your total money is now $" + currentMoneyUpdated + ".");
 										((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										int currentNumOfRailOwned = MonopolyRunner.players.get(Playing.currentPlayer).getNumberOfRailroadsOwned();
+										MonopolyRunner.players.get(Playing.currentPlayer).setNumberOfRailroadsOwned(currentNumOfRailOwned + 1);
 									}
 					}
 				
@@ -90,6 +92,8 @@ public class BuyThings
 										int currentMoneyUpdated = MonopolyRunner.players.get(Playing.currentPlayer).getTotalMoney(); 
 										System.out.println( "You now own " + currentPropertyNameThree + ". Your total money is now $" + currentMoneyUpdated + ".");
 										((BuyableProperties) MonopolyRunner.board.get(OptionsWhenYouLand.place)).setBought(true);
+										int currentNumOfUtilOwned = MonopolyRunner.players.get(Playing.currentPlayer).getNumberOfUtilitiesOwned(); 
+										MonopolyRunner.players.get(Playing.currentPlayer).setNumberOfUtilitiesOwned(currentNumOfUtilOwned + 1); 
 										
 										
 

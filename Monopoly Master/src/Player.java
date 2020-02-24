@@ -10,9 +10,11 @@ public class Player
 		private boolean getOutOfJail;
 		private boolean inReverse;
 		private boolean inJail;
+		private int numberOfRailroadsOwned; 
+		private int numberOfUtilitiesOwned; 
 
 
-		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g, boolean iJ, boolean iR)
+		public Player(String n, int t, int p, ArrayList<BuyableProperties> pR, boolean g, boolean iJ, boolean iR, int nR, int nU)
 			{
 				name = n;
 				totalMoney = t;
@@ -20,8 +22,26 @@ public class Player
 				playerProperties = pR;
 				getOutOfJail = g;
 				inReverse = iR;
+				numberOfRailroadsOwned = nR; 
+				numberOfUtilitiesOwned = nU; 
 				
 			}
+
+		public int getNumberOfUtilitiesOwned() {
+			return numberOfUtilitiesOwned;
+		}
+
+		public void setNumberOfUtilitiesOwned(int numberOfUtilitiesOwned) {
+			this.numberOfUtilitiesOwned = numberOfUtilitiesOwned;
+		}
+
+		public int getNumberOfRailroadsOwned() {
+			return numberOfRailroadsOwned;
+		}
+
+		public void setNumberOfRailroadsOwned(int numberOfRailroadsOwned) {
+			this.numberOfRailroadsOwned = numberOfRailroadsOwned;
+		}
 
 		public boolean isInJail() {
 			return inJail;
