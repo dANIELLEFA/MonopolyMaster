@@ -351,14 +351,16 @@ public class OptionsWhenYouLand
 		
 		public static void landOnCommunityChest()
 		{
-			System.out.println("\n<<<This is still a work in progress.>>>\n");
+			System.out.println("Drawing a card...");
+			CommunityChestCardMethods.findCard();
 		}
 
 		
 		
 		public static void landOnChance()
 		{ 
-			System.out.println("\n<<<This is still a work in progress.>>>\n");
+			System.out.println("Drawing a card...");
+			ChanceCardMethods.findCard();
 		}
 		
 		

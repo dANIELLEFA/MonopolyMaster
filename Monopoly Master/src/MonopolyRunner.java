@@ -26,6 +26,8 @@ public class MonopolyRunner
 				MakeOtherPieces.makeRailroads();
 				MakeOtherPieces.makeUtilities();
 				MakeOtherPieces.makeAllOthers();
+				CommunityChestReader.readCommunityChest();
+				ChanceCardReader.readChanceCards(); 
 				Collections.sort(board, new BoardSorter()); 
 				//board is made 
 				

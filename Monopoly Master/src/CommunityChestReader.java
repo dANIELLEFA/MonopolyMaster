@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class CommunityChestReader
 	{
+	static String[] statements; 
+	
 		public static void readCommunityChest() throws FileNotFoundException
 		{
 			Scanner file = new Scanner(new File("communityChestCards"));
@@ -11,13 +13,7 @@ public class CommunityChestReader
 			while (file.hasNext())
 				{
 					String information = file.nextLine();
-					String[] toAssess = information.split("[%]");
-					
-					String whatCardSays = toAssess[0];
-					String operator = toAssess[1];
-					int valueToChange = Integer.parseInt(toAssess[2]);
-					
-				
+					statements = information.split("[+]");
 				}
 		}
 	}
