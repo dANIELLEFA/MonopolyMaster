@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class Playing
 	{
 		// which player is it
@@ -39,6 +41,7 @@ public class Playing
 					{
 						System.out.println("These are your properties owned:");
 						int counter = 1;
+						Collections.sort(MonopolyRunner.players.get(currentPlayer).getPlayerProperties(), new BoardSorter());
 						for(BuyableProperties p : MonopolyRunner.players.get(Playing.currentPlayer).getPlayerProperties())
 						{
 							System.out.println(counter + ": " + p.getName());
@@ -52,8 +55,9 @@ public class Playing
 					{
 						String playerName = MonopolyRunner.players.get(currentPlayer).getName(); 
 						
-							System.out.println(playerName + ", you don't get to roll this turn. You're in Jail!");
-							
+						System.out.println(playerName + ", you don't get to roll this turn. You're in Jail!");
+				
+						MonopolyRunner.players.get(currentPlayer).setInJail(false);
 							
 					}
 					
@@ -116,11 +120,18 @@ public class Playing
 		
 		private static void moveForward()
 		{
+			int previousMoney = MonopolyRunner.players.get(currentPlayer).getTotalMoney();
 
-			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll > 39)
+			if ((MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() + diceRoll > 39) && !(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() == 40))
 			{
 				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoForward());
 				passGoOverTurn();
+			}
+			else if(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() == 40)
+			{
+				System.out.println("You pay $50 to get out of jail.");
+				MonopolyRunner.players.get(currentPlayer).setTotalMoney(previousMoney - 50);
+				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(10 + diceRoll);
 			}
 			else
 			{
@@ -130,10 +141,18 @@ public class Playing
 		
 		private static void moveBackwards()
 		{
-			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll < 0)
+			int previousMoney = MonopolyRunner.players.get(currentPlayer).getTotalMoney();
+			
+			if (MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() - diceRoll < 0 && !(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() == 40))
 			{
 				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(passGoBackward());
 				passGoOverTurn();
+			}
+			else if(MonopolyRunner.players.get(currentPlayer).getPlaceOnBoard() == 40)
+			{
+				System.out.println("You pay $50 to get out of jail.");
+				MonopolyRunner.players.get(currentPlayer).setTotalMoney(previousMoney - 50);
+				MonopolyRunner.players.get(currentPlayer).setPlaceOnBoard(10 - diceRoll);
 			}
 			else
 			{
